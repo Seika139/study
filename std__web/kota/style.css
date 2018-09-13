@@ -1,0 +1,40 @@
+/* ここから解答 */
+.oya {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;/* または、align-content: space-around; */
+  width: 150px;
+  height: 150px;
+}
+.ko {
+  height: 50px;
+  width: 50px;
+}
+.ko-1 {
+
+}
+.ko-2 {
+
+}
+.ko-3 {
+
+}
+.ko-4 {
+
+}
+.ko-5 {
+
+}
+/* ここまで解答 */
+
+.oya {
+  background-color: #fff9e0;
+  border: 1px solid black;
+}
+.ko {
+  box-sizing: border-box;
+  background-color: #ff6600;
+  border: 1px solid #ce2525;
+  color: #fff9e0;
+  text-align: center;
+}

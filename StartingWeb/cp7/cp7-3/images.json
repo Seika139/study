@@ -1,0 +1,22 @@
+[
+  {
+    "path": "img/img01.jpg",
+    "name": "喜多見柚",
+    "caption": "かわいい"
+  },
+  {
+    "path": "../images/img02.png",
+    "name": "パリラパッション",
+    "caption": "パッション！"
+  },
+  {
+    "path": "../images/img03.png",
+    "name": "ハイハイハハハイ！",
+    "caption": "Say Yeah!"
+  },
+  {
+    "path": "../images/img04.png",
+    "name": "秋風に手を振って",
+    "caption": "My Dear"
+  }
+]

@@ -1,0 +1,10 @@
+moyattonoMacBook-Pro:webex suzukikenichi$ sudo npm install stylus
+Password:
+npm WARN react-addons-css-transition-group@15.6.2 requires a peer of react@^15.4.2 but none is installed. You must install peer dependencies yourself.
+npm WARN react-addons-test-utils@15.6.2 requires a peer of react-dom@^15.4.2 but none is installed. You must install peer dependencies yourself.
+npm WARN web_expert_course_template@1.0.0 No repository field.
+
++ stylus@0.54.5
+updated 1 package in 13.43s
+moyattonoMacBook-Pro:webex suzukikenichi$ stylus —version
+-bash: stylus: command not found
