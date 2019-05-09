@@ -1,0 +1,94 @@
+\documentclass[a4paper,papersize,dvipdfmx]{jsarticle}
+\usepackage{ascmac}
+\usepackage{mathtools, amssymb,bm}
+\usepackage{comment}
+\usepackage[hiresbb]{graphicx}
+\usepackage{tcolorbox,color}
+\tcbuselibrary{raster,skins,breakable}
+
+\newcommand{\pic}[1]{\begin{center} \includegraphics[width=1.0\linewidth,clip]{#1} \end{center}}   %写真用
+\newcommand{\pict}[2]{\begin{center} \includegraphics[width= {#2} cm]{#1} \end{center}}   %写真用
+\newcommand{\redunderline}[1]{\textcolor{red}{\underline{¥textcolor{black}{#1}}}}   %赤いアンダーライン
+\newcommand{\mon}[1]{\item[({#1})] \ }
+\newcommand{\ctext}[1]{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}%文字を丸囲みする(2桁の数字までならいける)
+
+%\itemを四角で囲った数字にする場合は以下のコメントアウトを消す
+%\renewcommand{\labelenumi}{\textbf{\framebox[1.5zw]{\theenumi}}}
+
+
+%enumerateの2階層めのカウンタを1,2,3, にする時は以下のコメントアウトを消す
+\renewcommand{\theenumii}{\arabic{enumii}}
+
+%enumerateのカウンタについては以下を参照
+% http://www3.otani.ac.jp/fkdsemi/pLaTeX_manual/kajyo.html
+
+
+%enumerateの番号の出力形式を変更するには、カウンタの値を出力する命令を定義し直す。
+%レベル	カウンタ	出力する命令	デフォルトの出力
+%１	enumi	¥theenumi	アラビア数字（１，２，３，・・・）
+%２	enumii	¥theenumii	小文字のアルファベット（a，b，c，・・・）
+%３	enumiii	¥theenumiii	小文字のローマ数字（小文字のローマ数字（\UTF{2170}，\UTF{2171}，\UTF{2172}，・・・）
+%４	enumiv	¥theenumiv	大文字のアルファベット（A，B，C，・・・）
+%例：¥enumiカウンタを大文字のローマ数字で出力する設定
+% ¥renewcommand{¥theenumi}{¥Roman{enumi}}
+
+%　番号の出力形式
+%命令	出力形式
+%¥arabic	アラビア数字（１、２、３、・・・）
+%¥roman	ローマ数字（\UTF{2170}、\UTF{2171}、\UTF{2172}、・・・）
+%¥Roman	ローマ数字（\UTF{2160}、\UTF{2161}、\UTF{2162}、・・・）
+%¥alph	アルファベット（a、b、c、・・・）
+%¥Alph	アルファベット（A、B、C、・・・）
+
+
+
+
+\begin{document}
+
+\title{ここにタイトルを記入}
+\author{SUZUKEN}
+%作成日を入れる場合は消す
+\date{}
+\maketitle
+
+%以下の３つからフォントサイズを選択するとよい
+%\footnotesize
+%\small
+%\normalsize
+
+\section*{1日目}
+diethyl malonate に$\rm{NaNO_2, AcOH, H_2O}$を加えて、diethyl isonitrosomalonate を合成する反応を行った。
+
+
+\subsection*{結果}
+$\rm NaNO_2$ 25 gを10等分してフラスコに入れていくと、始めは透明だった液体が白く濁り始め、次第に黄色く変化していった。また、３つ口フラスコのスリの付近にも黄色い付着物が観測された。最後に分液ロートに移すと黄色い油状の上層と、白濁した下層に分離したことが確認された。
+
+\subsubsection*{TLC}
+
+\pict{imgs1/tlc.jpeg}{6}
+
+\subsection*{考察}
+
+フラスコのスリが黄色く変色したのは$\rm NaNO_2$由来の亜硝酸が以下の反応式に示すような不均化反応によって二酸化窒素に変化し、ガラスやその内部に付着する有機化合物に沈着したからであると考えられる。
+
+\[\rm 3HNO_3 \rightarrow N{O_3}^- + 2NO + H_3O^+\]
+\[\rm 2NO + O_2 \rightarrow 2NO_2\]
+
+今回の反応において$\rm NaNO_2$を10分割して加えたり、diethyl malonate に対して三等量ほど用意されていたのは、この不均化反応によって失われる亜硝酸とそれに付随する$\rm NO^+$の不足を補うためである。
+
+\subsection*{課題}
+\subsubsection*{(1) 反応機構}
+
+\begin{enumerate}
+\item $\rm NO^+$を生じさせる
+\pict{imgs1/hk1.jpeg}{10}
+\item diethyl malonate がエノール形に互変異性化する
+\pict{imgs1/hk2.jpeg}{12}
+\item エノール形に $\rm NO^+$が反応して diethyl isonitrosomalonate が生じる
+\pict{imgs1/hk3.jpeg}{12}
+
+また、C=C結合よりC=O結合NO方が強いことから、一般的にはエノール形よりケト形の方が安定であるが、今回用いた diethyl malonateのような$\beta$-ジカルボニル化合物は図のように分子内水素結合と共役によるπ電子の非局在化によって安定するので、エノール形の方が割合が高くなることもある。
+\pict{imgs1/bck.jpeg}{7}
+\end{enumerate}
+
+\end{document}
