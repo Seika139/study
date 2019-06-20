@@ -6,14 +6,18 @@ def tex_read(path_r):
         l = ["\n"]+[s.strip() for s in f.readlines()] #2行あけるようにしている
     return l
 
-def tex_write(list,output,header=True):
+def tex_write(list,output,header=True,toc=False):
     if header:
         with open("begin.tex") as f:
-            ft = f.readlines()
+            begin_tex = f.readlines()
     else:
-        ft = ""
+        begin_tex = ""
+
+    if toc:
+        begin_tex += "\n" + r"\tableofcontents"
+
     with open(output, mode='w') as f:
-        for i in ft:
+        for i in begin_tex:
             f.write(i)
         for i in list:
             f.write(i)
@@ -44,7 +48,8 @@ def turn_off(str):
     return str
 
 # strがヘッダーかどうか調べる
-def set_chapter(str):
+def set_chapter(str,chap_n=False):
+    chap_txt = "" if chap_n else "*"
     num = 0
     i = 0
     while 1:
@@ -54,13 +59,17 @@ def set_chapter(str):
             i += 1
         else: break
     if num == 1:
-        str = r"\part*{" + str[num:].strip() + "}"
+        str = r"\part" + "%s{" % chap_txt + str[num:].strip() + "}"
     elif num == 2:
-        str = r"\section*{" + str[num:].strip() + "}"
+        str = r"\section" + "%s{" % chap_txt + str[num:].strip() + "}"
     elif num == 3:
-        str = r"\subsection*{" + str[num:].strip() + "}"
-    elif num >= 4:
-        str = r"\subsubsection*{" + str[num:].strip() + "}"
+        str = r"\subsection" + "%s{" % chap_txt + str[num:].strip() + "}"
+    elif num == 4:
+        str = r"\subsubsection" + "%s{" % chap_txt + str[num:].strip() + "}"
+    elif num == 5:
+        str = r"\paragraph{" + str[num:].strip() + "}"
+    elif num >= 6:
+        str = r"\subparagraph{" + str[num:].strip() + "}"
     if num > 0:
         str = turn_off(str)
     return str
@@ -103,8 +112,15 @@ def set_list(str):
 def tcolorbox(str):
     if len(str) > 1:
         if str[:2] == "> " and dix["tcolorbox"] == 0:
-            if "#" in str[:5]:
-                str = r"\begin{tcolorbox}[colback=white,colbacktitle=black,coltitle=white,title={" + str[2:] + r"}]"
+            sharp_n = 2
+            while sharp_n < 7:
+                if str[sharp_n] == "#":
+                    sharp_n += 1
+                else:
+                    break
+            if sharp_n > 2:
+                str = str[:sharp_n+1].replace("#","") + str[sharp_n+1:]
+                str = r"\begin{tcolorbox}[colback=white,colbacktitle=black,coltitle=white,title={" + str[3:] + r"}]"
             else:
                 str = r"\begin{tcolorbox}[colback=white,colbacktitle=black,coltitle=white]" + "\n" + str[2:]
             dix["tcolorbox"] = 1
@@ -130,9 +146,9 @@ def find_math(str):
     return str
 
 # それぞれの関数をまとめる
-def combine_func(str):
+def combine_func(str,chap_n):
     str = tcolorbox(str)
-    str = set_chapter(str)
+    str = set_chapter(str,chap_n)
     str = set_list(str)
     str = find_math(str)
     return str
@@ -155,17 +171,19 @@ if __name__ == "__main__":
         if not '.tex' in file_out:
             file_out +=  '.tex'
 
+    chap_yn = input("if you need section numbers insert 'y'\n>> ")
+    chap_n = True if chap_yn == "y" else False
+
     #読み込み開始
     l = tex_read(file_in)
     for i in range(len(l)):
-        l[i] = combine_func(l[i])
+        l[i] = combine_func(l[i],chap_n)
     # 書き出しファイル名
-    header = input("if you needn't header and footer, insert 'y'\n>> ")
-    if header == "y":
-        tex_write(l,file_out,False)
-    else:
-        tex_write(l,file_out)
-
+    header = input("if you need header and footer, insert 'y'\n>> ")
+    toc = input("if you need table of contents, insert 'y'\n>> ")
+    header_tf = True if header == "y" else False
+    toc_tf = True if toc == "y" else False
+    tex_write(l,file_out,header=header_tf,toc=toc_tf)
 
 
 """

@@ -1,0 +1,153 @@
+\documentclass[a4paper,papersize,dvipdfmx]{jsarticle}
+\usepackage{ascmac}
+\usepackage{mathtools, amssymb,bm}
+\usepackage{comment}
+\usepackage[hiresbb]{graphicx}
+\usepackage{tcolorbox,color}
+\usepackage{here}
+\tcbuselibrary{raster,skins,breakable}
+
+\newcommand{\pic}[1]{\begin{center} \includegraphics[width=1.0\linewidth,clip]{#1} \end{center}}   %写真用
+\newcommand{\pict}[2]{\begin{center} \includegraphics[width= {#2} cm]{#1} \end{center}}   %写真用
+\newcommand{\redunderline}[1]{\textcolor{red}{\underline{¥textcolor{black}{#1}}}}   %赤いアンダーライン
+\newcommand{\mon}[1]{\item[({#1})] \ }
+\newcommand{\ctext}[1]{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}%文字を丸囲みする(2桁の数字までならいける)
+
+%\itemを四角で囲った数字にする場合は以下のコメントアウトを消す
+%\renewcommand{\labelenumi}{\textbf{\framebox[1.5zw]{\theenumi}}}
+
+
+%enumerateの2階層めのカウンタを1,2,3, にする時は以下のコメントアウトを消す
+\renewcommand{\theenumii}{\arabic{enumii}}
+
+%enumerateのカウンタについては以下を参照
+% http://www3.otani.ac.jp/fkdsemi/pLaTeX_manual/kajyo.html
+
+
+%enumerateの番号の出力形式を変更するには、カウンタの値を出力する命令を定義し直す。
+%レベル	カウンタ	出力する命令	デフォルトの出力
+%１	enumi	¥theenumi	アラビア数字（１，２，３，・・・）
+%２	enumii	¥theenumii	小文字のアルファベット（a，b，c，・・・）
+%３	enumiii	¥theenumiii	小文字のローマ数字（小文字のローマ数字（\UTF{2170}，\UTF{2171}，\UTF{2172}，・・・）
+%４	enumiv	¥theenumiv	大文字のアルファベット（A，B，C，・・・）
+%例：¥enumiカウンタを大文字のローマ数字で出力する設定
+% ¥renewcommand{¥theenumi}{¥Roman{enumi}}
+
+%　番号の出力形式
+%命令	出力形式
+%¥arabic	アラビア数字（１、２、３、・・・）
+%¥roman	ローマ数字（\UTF{2170}、\UTF{2171}、\UTF{2172}、・・・）
+%¥Roman	ローマ数字（\UTF{2160}、\UTF{2161}、\UTF{2162}、・・・）
+%¥alph	アルファベット（a、b、c、・・・）
+%¥Alph	アルファベット（A、B、C、・・・）
+
+
+
+
+\begin{document}
+
+\title{医薬品情報学 演習レポート(演習事例2)}
+\author{10191043  \ \ \ 鈴木健一}
+%作成日を入れる場合は消す
+\date{}
+\maketitle
+
+%以下の３つからフォントサイズを選択するとよい
+%\footnotesize
+%\small
+%\normalsize
+
+
+\subsection*{シクロスポリンとセントジョーンズワートの相互作用}
+セントジョーンズワートは以下のような効果があると研究で示されている。
+\begin{itemize}
+\item うつ病患者に対して薬群より優れた効果を示す。
+\item 標準的な抗うつ薬と同等に効果がある。
+\item 標準的な抗うつ薬と比較して副作用が小さい。
+\end{itemize}
+
+そのため、うつ病や不安障害の一般的な処置として用いられている。
+また、薬物代謝酵素であるシトクロム P450 を誘導するため、この酵素で代謝される多くの医薬品との相互作用が知られている。
+
+薬物代謝にはいくつかの酵素が関与しているが、その中で特に重要な役割を果たしているものがシトクロム P450(CYP）と呼ばれる酵素である。CYPの分子種の一つであるCYP3A4 は多数の医薬品の代謝に関与することから、薬物相互作用を考える際に重要な分子種である。CYP は主に肝臓に存在しているが、小腸上皮細胞においても発現しており経口投与後の薬物の代謝に関与する。薬力学的相互作用では、併用された医薬品などが、医薬品の作用部位への結合性や感受性を変動させることで、作用が変化する。
+
+今回取り扱うセントジョーンズワートはP450 を誘導するため、この酵素で代謝される多くの医薬品との相互作用を引き起こす。
+
+\begin{tcolorbox}[colback=white,colbacktitle=black,coltitle=white,title={セントジョーンズワートとシクロスポリンの相互作用の症例}]
+末期虚血性心疾患のため心移植を施行された男性患者で、移植後、シクロスポリンやアザチオプリン等の免疫抑制薬の投与でコントロールされており、シクロスポリンの血中濃度も安定していた。その後、市販のセントジョーンズワート含有食品（抽出物 300 mg 含有）を 1日3回摂取したところ、摂取開始 3 週間後にシクロスポリンの血中濃度の低下と急性拒絶反応が認められた。本症例に拒絶反応を疑わせる他要因は認められなかった。セントジョーンズワート含有食品の摂取を中止したところ、シクロスポリンの血中濃度は回復した。
+\end{tcolorbox}
+
+シクロスポリンは代謝酵素チトクロームP450 3A4（CYP3A4）で代謝されることで以下のような効能を持つ。
+
+
+\begin{enumerate}
+\item 下記の臓器移植における拒絶反応の抑制。腎移植、肝移植、心移植、肺移植、膵移植、小腸移植
+\item 骨髄移植における拒絶反応及び移植片対宿主病の抑制
+\item ベーチェット病(眼症状のある場合)、及びその他の非感染性ぶどう膜炎(既存治療で効果不十分であり、視力低下のおそれのある活動性の中間部又は後部の非感染性ぶどう膜炎に限る)
+\item 尋常性乾癬(皮疹が全身の 30％以上に及ぶものあるいは難治性の場合)、膿疱性乾癬、乾癬性紅皮症、関節症性乾癬
+\item 再生不良性貧血、赤芽球癆
+\item ネフローゼ症候群(頻回再発型あるいはステロイドに抵抗性を示す場合)
+\item 全身型重症筋無力症(胸腺摘出後の治療において、ステロイド剤の投与が効果不十分、又は副作用により困難な場合)
+\item アトピー性皮膚炎（既存治療で十分な効果が得られない患者）
+
+
+この症例から、セントジョーンズワートを併用することでシクロスポリンが代謝酵素の遺伝子の転写や翻訳を亢進することでタンパク量を増加させるなどして代謝酵素の活性を上昇させ、医薬品の血中濃度は低下させていることが想定される。
+
+
+
+\end{enumerate}
+\subsection*{相互作用を回避するための提案}
+上記よりシクロスポリンとセントジョーンズワートを併用することで当該患者の尋常性乾癬に対して十分な効能を示すことができないことが想定される。
+したがって以下のような方法で相互作用を回避する必要がある。
+
+\begin{itemize}
+\item 紫外線を用いた光線療法。アポトーシスや制御性T細胞の誘導により病因となる細胞を取り除くことができる。
+\item PUVA療法 : ソラレンという紫外線に敏感になる薬剤を外用・内服・入浴などの方法で投与し、長波長紫外線（UVA）を照射する。
+\item UVB療法 : ソラレンなどの薬剤を使わず、中波長紫外線（UVB）照射を行う。
+
+\item セントジョーンズワートによる肝機能のp450が元に戻ってからシクロスポリンの服用を開始する。シクロスポリンの服用は以下の論文から、セントジョーンズワートの服用をやめてから14日後以降に始めると良い。(https://www.jstage.jst.go.jp/article/jscpt1970/34/1/34\_1\_89S/\_pdf/-char/ja)
+
+\end{itemize}
+\subsection*{セントジョーンズワートと併用して相互作用を引き起こす薬物}
+
+セントジョーンズワートはP450を誘導するため、以下の表のように多くの医薬品と相互作用する。
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+健康食品・医薬品 & 相互作用 & 想定される機序 \\ \hline
+アミトリプチリン & 血中アミトリプチリン濃度の低下      & CYP3A4 および P-gp の誘導 \\ \hline
+ミダゾラム    & 血中ミダゾラム濃度の低下         & CYP3A4 誘導           \\ \hline
+シクロスポリン  & 血中シクロスポリン濃度の低下       & CYP 誘導              \\ \hline
+テオフィリン   & 血中テオフィリン濃度の低下        & CYP 誘導              \\ \hline
+イマチニブ    & 血中イマチニブ濃度の低下         & CYP 誘導              \\ \hline
+ワルファリン   & 抗血液凝固作用の低下           & CYP 誘導              \\ \hline
+ジゴキシン    & 血中ジゴキシン濃度の低下         & P-gp 誘導             \\ \hline
+インジナビル   & 血中インジナビル濃度の低下        & CYP 誘導              \\ \hline
+イリノテカン   & SN-38 濃度の低下          & 酵素および P-gp の調節      \\ \hline
+メサドン     & メサドン濃度の低下            & CYP 誘導              \\ \hline
+経口避妊薬    & 中間期出血                & CYP 誘導              \\ \hline
+ロペラミド    & 急性せん妄症状の発現           & MAO 阻害              \\ \hline
+タクロリムス   & 血中タクロリムス濃度の低下        & CYP 誘導              \\ \hline
+シンバスタチン  & 血中シンバスタチンヒドロキシ酸濃度の低下 & CYP 誘導              \\ \hline
+ネファゾドン   & 吐き気，嘔吐，頭痛            & セロトニン取り込み阻害         \\ \hline
+セルトラリン   & 吐き気，嘔吐，頭痛，精神錯乱，情動不安  & セロトニン取り込み阻害         \\ \hline
+パロキセチン   & 吐き気，衰弱，倦怠感           & セロトニン取り込み阻害         \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\section*{参考資料}
+\footnotesize
+
+\begin{itemize}
+\item https://www.lab.toho-u.ac.jp/med/ohashi/dermatology/patient/plaque\_psoriasis.html
+\item https://www.saiseikai.or.jp/medical/disease/psoriasis\_vulgar/
+\item http://www.jsac.or.jp/bunseki/pdf/bunseki2007/200709kougi.PDF
+\item https://www.jstage.jst.go.jp/article/jscpt1970/34/1/34\_1\_89S/\_pdf/-char/ja
+\item https://www.jstage.jst.go.jp/article/faruawpsj/50/7/50\_654/\_pdf
+\end{itemize}
+
+\end{document}

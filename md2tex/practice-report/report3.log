@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016) (preloaded format=platex 2017.8.10)  12 MAY 2019 00:57
+This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016) (preloaded format=platex 2017.8.10)  23 MAY 2019 23:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -476,11 +476,20 @@ Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
 \tcb@out=\write5
 \tcb@record@out=\write6
 )
+(/usr/local/texlive/2016/texmf-dist/tex/latex/here/here.sty)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count122
+\float@exts=\toks34
+\float@box=\box66
+\@float@everytoks=\toks35
+\@floatcapt=\box67
+)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
 Library (tcolorbox): 'tcbraster.code.tex' version '3.91'
-\c@tcbrastercolumn=\count122
-\c@tcbrasterrow=\count123
-\c@tcbraster=\count124
+\c@tcbrastercolumn=\count123
+\c@tcbrasterrow=\count124
+\c@tcbraster=\count125
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
 Library (tcolorbox): 'tcbskins.code.tex' version '3.91'
 (/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
@@ -495,8 +504,8 @@ Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen185
 \pgffor@skip=\dimen186
-\pgffor@stack=\toks34
-\pgffor@toks=\toks35
+\pgffor@stack=\toks36
+\pgffor@toks=\toks37
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
 e.tex
@@ -505,7 +514,7 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
 dlers.code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count125
+\pgf@plot@mark@count=\count126
 \pgfplotmarksize=\dimen187
 )
 \tikz@lastx=\dimen188
@@ -514,106 +523,106 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@lastysaved=\dimen191
 \tikzleveldistance=\dimen192
 \tikzsiblingdistance=\dimen193
-\tikz@figbox=\box66
-\tikz@figbox@bg=\box67
-\tikz@tempbox=\box68
-\tikz@tempbox@bg=\box69
-\tikztreelevel=\count126
-\tikznumberofchildren=\count127
-\tikznumberofcurrentchild=\count128
-\tikz@fig@count=\count129
+\tikz@figbox=\box68
+\tikz@figbox@bg=\box69
+\tikz@tempbox=\box70
+\tikz@tempbox@bg=\box71
+\tikztreelevel=\count127
+\tikznumberofchildren=\count128
+\tikznumberofcurrentchild=\count129
+\tikz@fig@count=\count130
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
 e.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count130
-\pgfmatrixcurrentcolumn=\count131
-\pgf@matrix@numberofcolumns=\count132
+\pgfmatrixcurrentrow=\count131
+\pgfmatrixcurrentcolumn=\count132
+\pgf@matrix@numberofcolumns=\count133
 )
-\tikz@expandcount=\count133
+\tikz@expandcount=\count134
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 )))
-\tcb@waterbox=\box70
+\tcb@waterbox=\box72
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
 Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '3.91'
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
 Library (tcolorbox): 'tcbbreakable.code.tex' version '3.91'
-\tcb@testbox=\box71
-\tcb@totalupperbox=\box72
-\tcb@totallowerbox=\box73
+\tcb@testbox=\box73
+\tcb@totalupperbox=\box74
+\tcb@totallowerbox=\box75
 ) (./report3.aux)
 \openout1 = `report3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
  ABD: EveryShipout initializing macros
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 16.60605pt on input line 52.
+(Font)              scaled to size 16.60605pt on input line 53.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 16.60605pt on input line 52.
+(Font)              scaled to size 16.60605pt on input line 53.
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 52.
+(Font)              scaled to size 11.53198pt on input line 53.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 52.
+(Font)              scaled to size 11.53198pt on input line 53.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 5.76599pt on input line 52.
-LaTeX Font Info:    Try loading font information for U+msa on input line 52.
+(Font)              scaled to size 5.76599pt on input line 53.
+LaTeX Font Info:    Try loading font information for U+msa on input line 53.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 52.
+LaTeX Font Info:    Try loading font information for U+msb on input line 53.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 52.
+(Font)              scaled to size 11.53198pt on input line 53.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 7.68799pt on input line 52.
+(Font)              scaled to size 7.68799pt on input line 53.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 5.76599pt on input line 52.
+(Font)              scaled to size 5.76599pt on input line 53.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 61.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 61.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 61.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 61.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.805pt on input line 61.
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 59.
+(Font)              scaled to size 13.83836pt on input line 66.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 59.
+(Font)              scaled to size 13.83836pt on input line 66.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 59.
+(Font)              scaled to size 13.83836pt on input line 66.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 59.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 60.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 60.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 60.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 60.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 4.805pt on input line 60.
+(Font)              scaled to size 13.83836pt on input line 66.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 63.
+(Font)              scaled to size 11.53198pt on input line 70.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 66.
+(Font)              scaled to size 9.60999pt on input line 73.
 File: imgs1/tlc.jpeg Graphic file (type bmp)
 
 <imgs1/tlc.jpeg> [1
@@ -631,14 +640,64 @@ File: imgs1/bck.jpeg Graphic file (type bmp)
 File: imgs2/tlc.jpeg Graphic file (type bmp)
  <imgs2/tlc.jpeg> [3]
 File: imgs2/hk.jpg Graphic file (type bmp)
- <imgs2/hk.jpg> [4] (./report3.aux) ) 
-Here is how much of TeX's memory you used:
- 15602 strings out of 493693
- 326621 string characters out of 6149787
- 400751 words of memory out of 5000000
- 18875 multiletter control sequences out of 15000+600000
- 23885 words of font info for 104 fonts, out of 8000000 for 9000
- 934 hyphenation exceptions out of 8191
- 54i,6n,83p,848b,289s stack positions out of 5000i,500n,10000p,200000b,80000s
+ <imgs2/hk.jpg>
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 137.
 
-Output written on report3.dvi (4 pages, 7272 bytes).
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 137.
+ [4] [5]
+File: imgs4/tlc.jpeg Graphic file (type bmp)
+
+<imgs4/tlc.jpeg>
+File: imgs4/hk.jpeg Graphic file (type bmp)
+ <imgs4/hk.jpeg> [6]
+File: imgs4/st1.jpeg Graphic file (type bmp)
+ <imgs4/st1.jpeg>
+File: imgs4/st2.jpeg Graphic file (type bmp)
+ <imgs4/st2.jpeg> [7]
+File: imgs5/tlc.jpeg Graphic file (type bmp)
+
+<imgs5/tlc.jpeg>
+File: imgs5/hk.jpeg Graphic file (type bmp)
+ <imgs5/hk.jpeg> [8]
+File: imgs6/tlc.jpeg Graphic file (type bmp)
+ <imgs6/tlc.jpeg> [9]
+File: imgs6/hk.jpeg Graphic file (type bmp)
+ <imgs6/hk.jpeg>
+[10] [11]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 289.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 289.
+File: imgs-k/hk1.jpeg Graphic file (type bmp)
+ <imgs-k/hk1.jpeg>
+File: imgs-k/hk2.jpeg Graphic file (type bmp)
+ <imgs-k/hk2.jpeg>
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 310.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 318.
+
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 318.
+ [12]
+File: imgs-k/hk3.jpeg Graphic file (type bmp)
+
+<imgs-k/hk3.jpeg> [13] (./report3.aux) ) 
+Here is how much of TeX's memory you used:
+ 15753 strings out of 493693
+ 329050 string characters out of 6149787
+ 406130 words of memory out of 5000000
+ 18995 multiletter control sequences out of 15000+600000
+ 26724 words of font info for 116 fonts, out of 8000000 for 9000
+ 934 hyphenation exceptions out of 8191
+ 54i,9n,83p,827b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on report3.dvi (13 pages, 24284 bytes).
