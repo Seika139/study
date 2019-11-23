@@ -1,0 +1,281 @@
+\documentclass[a4paper,papersize,dvipdfmx]{jsarticle}
+\usepackage{ascmac}
+\usepackage{mathtools, amssymb,bm}
+\usepackage{comment}
+\usepackage[hiresbb]{graphicx}
+\usepackage{tcolorbox,color}
+\usepackage{here}
+\tcbuselibrary{raster,skins,breakable}
+
+\newcommand{\pic}[1]{\begin{center} \includegraphics[width=1.0\linewidth,clip]{#1} \end{center}}   %写真用
+\newcommand{\pict}[2]{\begin{center} \includegraphics[width= {#2} cm]{#1} \end{center}}   %写真用
+\newcommand{\piccap}[3]{\begin{figure}[H] \centering \includegraphics[width= {#2} cm]{#1} \caption{#3} \label{fig {#1}} \end{figure}} %キャプションつき画像
+\newcommand{\redunderline}[1]{\textcolor{red}{\underline{¥textcolor{black}{#1}}}}   %赤いアンダーライン
+\newcommand{\mon}[1]{\item[({#1})] \ }
+\newcommand{\ctext}[1]{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}%文字を丸囲みする(2桁の数字までならいける)
+
+
+% 複数図を横に並べるときのヒント http://wright.mydns.jp/?p=704
+% \begin{figure}{H}
+% \centering
+% \begin{minipage}{0.22\hsize}
+% \piccap{}{}{}
+% \end{minipage}
+% \begin{minipage}{0.06\hsize}
+% \hspace{2mm}
+% \end{minipage}
+% \begin{minipage}{0.22\hsize}
+% \piccap{}{}{}
+% \end{minipage}
+% \end{figure}
+
+% 画像を貼る時はjpgかjpegで、pngはうまくいかない時もある
+
+%\itemを四角で囲った数字にする場合は以下のコメントアウトを消す
+%\renewcommand{\labelenumi}{\textbf{\framebox[1.5zw]{\theenumi}}}
+
+
+%enumerateの2階層めのカウンタを1,2,3, にする時は以下のコメントアウトを消す
+\renewcommand{\theenumii}{\arabic{enumii}}
+
+%enumerateのカウンタについては以下を参照
+% http://www3.otani.ac.jp/fkdsemi/pLaTeX_manual/kajyo.html
+
+
+%enumerateの番号の出力形式を変更するには、カウンタの値を出力する命令を定義し直す。
+%レベル	カウンタ	出力する命令	デフォルトの出力
+%１	enumi	¥theenumi	アラビア数字（１，２，３，・・・）
+%２	enumii	¥theenumii	小文字のアルファベット（a，b，c，・・・）
+%３	enumiii	¥theenumiii	小文字のローマ数字（小文字のローマ数字（ⅰ，ⅱ，ⅲ，・・・）
+%４	enumiv	¥theenumiv	大文字のアルファベット（A，B，C，・・・）
+%例：¥enumiカウンタを大文字のローマ数字で出力する設定
+% ¥renewcommand{¥theenumi}{¥Roman{enumi}}
+
+%　番号の出力形式
+%命令	出力形式
+%¥arabic	アラビア数字（１、２、３、・・・）
+%¥roman	ローマ数字（ⅰ、ⅱ、ⅲ、・・・）
+%¥Roman	ローマ数字（Ⅰ、Ⅱ、Ⅲ、・・・）
+%¥alph	アルファベット（a、b、c、・・・）
+%¥Alph	アルファベット（A、B、C、・・・）
+
+% ページ番号を消す場合は以下のコメントアウトを消す
+%\pagestyle{empty}
+
+\begin{document}
+
+\title{薬学実務実習1 薬剤部}
+\author{10191043 鈴木健一}
+%作成日を入れる場合は消す
+\date{}
+\maketitle
+
+%以下の３つからフォントサイズを選択するとよい
+%\footnotesize
+%\small
+%\normalsize
+
+
+\section*{目的}
+遺伝子変異とその表現型の連関の理解するために動物試料、およびヒト試料を用いた解析を行う。
+
+\section*{方法}
+\subsection*{マウスの遺伝子解析}
+UoxまたはOpg遺伝子をノックアウトしたマウスと野生型のマウスの耳片からDNAを抽出し、PCR法によって培養する。
+血漿中の尿酸の濃度からUoxの変異を、リン酸の濃度からOpgの変異を判定する。
+その後、酵素処理をへて電気泳動により遺伝子判定を行う。
+
+
+\subsection*{ヒトの遺伝子解析}
+ヒトの口腔内から細胞を取得してDNAを抽出し、PCR法によって培養する。
+その後、酵素処理をへて電気泳動により遺伝子判定を行う。
+
+\section*{結果}
+
+\subsection*{マウスの遺伝子解析}
+
+サンプルの血漿中の尿酸濃度を検量線によって求めた。
+Uoxがノックアウトされた個体では尿酸値が上昇するのが、グラフおよび表からも明らかとなった。
+UoxがノックアウトされたPC2と同様に尿酸値が高かったのはサンプル4である。
+
+\piccap{images/graph-uox.png}{10}{検量線 Uox}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+  \hline
+& 尿酸濃度(mg/dL) & 吸光度        \\ \hline
+PC1         & 1.831 & 1.016 \\ \hline
+PC2         & 6.083 & 3.318 \\ \hline
+PC3         & 1.723 & 0.957 \\ \hline
+SP1         & 1.856 & 1.029 \\ \hline
+SP2         & 1.542 & 0.859 \\ \hline
+SP3         & 1.578 & 0.879 \\ \hline
+SP4         & 5.588 & 3.050 \\ \hline
+SP5         & 1.191 & 0.670
+\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+サンプルの血漿中のリン酸濃度を検量線によって求めた。
+Opgがノックアウトされた個体ではリン酸濃度が上昇するのが、グラフおよび表からも明らかとなった。
+OpgがノックアウトされたPC3と同様に尿酸値が高かったのはサンプル2とサンプル3である。
+
+\piccap{images/graph-opg.png}{10}{検量線 Opg}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+  \hline
+& リン酸濃度(mg/dL) & 吸光度    \\ \hline
+PC1         & 14.21 & 1.016 \\ \hline
+PC2         & 15.29 & 3.318 \\ \hline
+PC3         & 22.08 & 0.957 \\ \hline
+SP1         & 15.25 & 1.029 \\ \hline
+SP2         & 24.69 & 0.859 \\ \hline
+SP3         & 25.19 & 0.879 \\ \hline
+SP4         & 15.87 & 3.050 \\ \hline
+SP5         & 14.71 & 0.670
+\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+検量線による遺伝子判定とは別に電気泳動によっても遺伝子判定を行った。
+写真の上側がUoxの判定、下側がOpgの判定である。
+Uoxが欠損したものはバンドが下にシフトする。そのような結果となったのは、コントロール2とサンプル4であった。
+Opgが欠損したものはバンドが上にシフトする。そのような結果となったのは、コントロール3とサンプル2,3であった。
+
+\piccap{images/jt-1.JPG}{10}{Uox,Opg 電気泳動}
+
+以上の結果よりサンプルの遺伝子は以下のように判定された。
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+SP1 & SP2   & SP3   & SP4   & SP5 \\ \hline
+野生型 & Opg欠損 & Opg欠損 & Uox欠損 & 野生型 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection*{ヒトの遺伝子解析}
+Allele Specific PCR法では野生型と変異型のプライマーをそれぞれ用意してPCR法でDNAの増幅を行った。
+しかし画像からわかるように全てのコントロールでDNAが増幅されてバンドが現れてしまったので、
+Allele Specific PCR法で遺伝子型の判定をすることはできなかった。
+\piccap{images/jt-h.JPG}{10}{Allele Specific PCR}
+
+PCR-RFLP法によってALDH2の遺伝子型判定を行った。画像の上側がその電気泳動の結果である。
+その結果クイズサンプルはQ1とQ3がヘテロ、Q2が変異型のホモであると判定された。またそれ以外の匿名化済み学生サンプルについても
+明瞭なバンドを得ることができた。
+
+変異導入 PCR-RFLPによってADH1Bの遺伝子判定を行なった。画像の下側がその電気泳動の結果である。
+画像の通り、他班のポジティブコントロールとサンプルについては明瞭なバンドが得られたが、自分の班のものについてはバンドが現れなかった。
+
+\piccap{images/jt-fg.JPG}{10}{PCR-RFLP & 変異導入 PCR-RFLP}
+
+\section*{考察}
+マウスの遺伝子解析では電気泳動による判定と検量線による判定で同じ遺伝子判定の結果を得ることができた。
+したがって相互の判定法の正当性が検証されたと言える。
+
+ヒトの遺伝子解析で、Allele Specific PCR法で遺伝子型の判定をすることはできなかったのは
+野生型と変異型のDNAの間には１塩基しか差がないため、多少DNA鎖が異なっていてもプライマーによって複製されてしまったからだと考えられる。
+
+ADH1Bの遺伝子判定において自分の班のサンプルのバンドが現れなかったのはPCRの作業において何らかの不手際があったからだと考えられる。
+他班サンプルの電気泳動は問題なかったので電気泳動の操作には問題がなく、DNAの複製の時点で失敗していたと推測できる。
+
+\section*{課題}
+
+\subsection*{1.}
+各人種の変異型(CYP2C19*2とCYP2C19*3)からホモをp、ヘテロqとして$p^2,2pq,q^2$の割合をそれぞれ求めた。
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|r|r|r|r|r|}
+\hline
+& CYP2C19*2 & CYP2C19*3 & 変異型ホモ & ヘテロ & 野生型ホモ \\ \hline
+Japanese          & 35.0                & 11.1            & 21.25          & 49.69         & 29.05               \\ \hline
+Chinese           & 39.9                & 6.1             & 21.16          & 49.68         & 29.16                \\ \hline
+Swidish Caucasian & 23.1                & 0.3             & 5.47          & 35.84          & 58.67                 \\ \hline
+Jewish Israell    & 15.0                & 1.0             & 2.56          & 26.88           & 70.56               \\ \hline
+Ethiopian         & 13.6                & 1.8             & 2.3716        & 26.05          & 71.57               \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection*{2.}
+\begin{enumerate}
+\mon{1}
+受容体の野生型、ヘテロ、変異型をそれぞれNR,IR,SRと表し、CYP2D6の野生型、ヘテロ、変異型をそれぞれEM,IM,PMと表す。
+NR-EMの患者群での奏効率が80\%になるときの薬物血漿中濃度のAUCは、NRは$p=10$であることから、以下のように求められる。
+\[
+0.8 = \frac{a}{10+a}
+\]\[
+a = 40
+\]
+投与された薬のAUCは患者のクリアランスに逆比例するので、
+一律の量で投与された薬の薬物血漿中濃度のAUCを$A$とすると、AはCYP2D6の代謝活性$t$によって異なり,
+以下のように表される。
+\[A = \frac{40}{t}\]
+これをもとにそれぞれの遺伝子型における奏効率と副作用発現率を計算すると次のようになる。
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+\hline
+受容体型    & NR    & NR    & NR    & IR    & IR    & IR    & SR    & SR    & SR    \\ \hline
+CYP2D6型 & EM    & IM    & PM    & EM    & IM    & PM    & EM    & IM    & PM    \\ \hline
+奏効率     & 0.800 & 0.870 & 0.952 & 0.889 & 0.930 & 0.976 & 0.952 & 0.971 & 0.990 \\ \hline
+副作用発現率  & 0.118 & 0.182 & 0.400 & 0.211 & 0.308 & 0.571 & 0.400 & 0.526 & 0.769 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\mon{2}
+アレルの頻度より受容体とCYP2D6の型でそれぞれ異なる患者の存在比率は
+\[NR : IR : SR = 0.64 : 0.32 : 0.04\]
+\[EM : IM : PM = 0.25 : 0.50 : 0.25\]
+よってそれぞれの遺伝子型を持つ患者の存在比率は以下のようになる。
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+\hline
+遺伝子型 & NR-EM & NR-IM & NR-PM & IR-EM & IR-IM & IR-PM & SR-EM & SR-IM & SR-PM \\ \hline
+存在割合 & 0.16  & 0.32  & 0.16  & 0.08  & 0.16  & 0.08  & 0.01  & 0.02  & 0.01  \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+求める全体での奏効率と副作用発現率は
+存在比率にそれぞれの割合を掛け合わせたものの和であるから、上記の表をもとに計算して、
+奏効率は89.5\%、副作用発現率は27.5\%となる。
+
+\mon{3}
+受容体の型に応じて奏効率が80\%になるように投与量を調節すると、
+薬物血漿中濃度のAUCはEM,IM,PMでそれぞれ40, 20, 8.0 ($\mu$g$\cdot$hr/mL)となる。
+投与量を調節したときのそれぞれの副作用発現率は11.8\%となるので全体での副作用発現率は11.8\%となる。
+したがって一律の量で投与した時に比べて副作用発現率が15.7\%低下する。
+
+\mon{4}
+t人の遺伝子診断をしたとすると。投与量を個別化した場合での副作用発症者の数は0.118t人である。
+一方、一律の量で投与した場合は副作用発症者の数は0.275t人である。
+したがって、副作用発症例を1減らすには0.118tと0.275tの差が1になるようなtを求めれば良い。
+\[ 0.275t - 0.118t = 1\]
+\[t = 6.369\]
+したがって最低でも7人の遺伝子診断が必要となる。
+
+\mon{5}
+遺伝子診断をする目的は奏効率を高く維持したままで副作用の発現例を少なくすることである。
+したがって、一律の量で薬を投与した患者の群と、遺伝子検査をした上で薬を投与した患者の群の2サンプルから
+薬が効いたか、副作用があったかというデータを取得して奏効率と副作用発現率の比較を行うことで有用性を確認する必要がある。
+また重篤な副作用が起きた患者の数という軸での評価を行うことも有用であると思われる。
+\end{enumerate}
+
+\subsection*{3.}
+自分の遺伝子の情報がわかるということで興味を持って実習に取り組むことができました。
+他の研究室の実習に比べてTA人数が多く一人ひとりが熱心に指導してくださったことが印象に残っています。
+残念ながら自分の班は遺伝子検査が半分失敗してしまい。アルコールの遺伝子型が分からなかったことが心残りです。
+\end{document}

@@ -1,0 +1,579 @@
+\documentclass[a4paper,papersize,dvipdfmx]{jsarticle}
+\usepackage{ascmac}
+\usepackage{mathtools, amssymb,bm}
+\usepackage{comment}
+\usepackage[hiresbb]{graphicx}
+\usepackage{tcolorbox,color}
+\usepackage{here}
+\tcbuselibrary{raster,skins,breakable}
+
+\newcommand{\pic}[1]{\begin{center} \includegraphics[width=1.0\linewidth,clip]{#1} \end{center}}   %写真用
+\newcommand{\pict}[2]{\begin{center} \includegraphics[width= {#2} cm]{#1} \end{center}}   %写真用
+\newcommand{\redunderline}[1]{\textcolor{red}{\underline{¥textcolor{black}{#1}}}}   %赤いアンダーライン
+\newcommand{\mon}[1]{\item[({#1})] \ }
+\newcommand{\ctext}[1]{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}%文字を丸囲みする(2桁の数字までならいける)
+
+% 画像を貼る時はjpgかjpegで、pngはうまくいかない時もある
+
+%\itemを四角で囲った数字にする場合は以下のコメントアウトを消す
+%\renewcommand{\labelenumi}{\textbf{\framebox[1.5zw]{\theenumi}}}
+
+
+%enumerateの2階層めのカウンタを1,2,3, にする時は以下のコメントアウトを消す
+\renewcommand{\theenumii}{\arabic{enumii}}
+
+%enumerateのカウンタについては以下を参照
+% http://www3.otani.ac.jp/fkdsemi/pLaTeX_manual/kajyo.html
+
+
+%enumerateの番号の出力形式を変更するには、カウンタの値を出力する命令を定義し直す。
+%レベル	カウンタ	出力する命令	デフォルトの出力
+%１	enumi	¥theenumi	アラビア数字（１，２，３，・・・）
+%２	enumii	¥theenumii	小文字のアルファベット（a，b，c，・・・）
+%３	enumiii	¥theenumiii	小文字のローマ数字（小文字のローマ数字（\UTF{2170}，\UTF{2171}，\UTF{2172}，・・・）
+%４	enumiv	¥theenumiv	大文字のアルファベット（A，B，C，・・・）
+%例：¥enumiカウンタを大文字のローマ数字で出力する設定
+% ¥renewcommand{¥theenumi}{¥Roman{enumi}}
+
+%　番号の出力形式
+%命令	出力形式
+%¥arabic	アラビア数字（１、２、３、・・・）
+%¥roman	ローマ数字（\UTF{2170}、\UTF{2171}、\UTF{2172}、・・・）
+%¥Roman	ローマ数字（\UTF{2160}、\UTF{2161}、\UTF{2162}、・・・）
+%¥alph	アルファベット（a、b、c、・・・）
+%¥Alph	アルファベット（A、B、C、・・・）
+
+
+
+
+\begin{document}
+
+\title{実習レポート 生命物理化学教室}
+\author{10191043 鈴木健一}
+%作成日を入れる場合は消す
+\date{}
+\maketitle
+
+%以下の３つからフォントサイズを選択するとよい
+%\footnotesize
+%\small
+%\normalsize
+
+
+\begin{flushright}
+実習日 : 2019/7/8 $\sim$ 2019/7/11
+
+実習班 :  B班
+\end{flushright}
+
+
+\part*{1 MALDI-TOFMSによる質量分析}
+
+\begin{itemize}
+\item 実習日 : 7/9
+
+\end{itemize}
+\subsection*{実験方法}
+
+実習書に従い、ペプチドA、ペプチドB、ペプチドBをトリプシン処理したもの(6 h、24 h)、ユビキチン、リゾチーム、YUH1、BSAのMSスペクトルを測定した。マトリックスはCHCAを用いた。
+
+\subsection*{結果}
+得られたスペクトルは別途添付。明らかなものはピークの帰属をスペクトル上に記入した。
+
+
+\subsection*{課題}
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={1．}]
+マトリックスを選択する際に注意する点を挙げなさい。
+\end{tcolorbox}
+
+\begin{enumerate}
+\item 分子量
+分子量が近いとシグナルがサンプル由来かマトリックス由来かがわからなくなるためマトリックスとサンプルの分子量は異なるものを用いる方が良い。また、マトリックスの分子量は小さい方が良い。それはマトリックスの分子量が大きいと、レーザーで分解して小さい分子量が小さいものができる可能性があるからである。
+
+\item 溶媒
+サンプルとマトリックスを両方溶かせる溶媒である必要がある。
+
+\item 反応性
+サンプルと反応しないこと。
+
+\item レーザー波長
+マトリックスがレーザー波長を吸収することが最低条件であり、なるべく弱いレーザー波長で励起するものの方がサンプルに与えるダメージが小さくなる。
+\end{enumerate}
+
+\
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={ 2}]
+ $\rm ^{15}N$標識Ubの$\rm ^{15}N$安定同位体標識率を算出しなさい。
+\end{tcolorbox}
+
+Ubの窒素原子の数$n_N$を求める。
+\[n_N = 76 + 3 \times 4 + 2 \times 1 + 6 + 2 + 7＝105\]
+
+MSスペクトルデータでは、通常のUbのピークが8560.483、$\rm ^{15}N$標識のピークが8655.947と計測されたので、$\rm ^{15}N$安定同位体標識率は以下のようになる。
+
+\[\rm ^{15}N \mbox{安定同位体標識率} = \frac{8655.947 - 8560.483}{105} = 91.37 \%\]
+
+\
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={3}]
+$\rm ^2H^{15}N$標識Ubの$\rm ^2H$安定同位体標識率を算出しなさい。ただし、$\rm ^{15}N$標識率は$\rm ^{15}N$標識Ubと変わらないものと仮定する
+\end{tcolorbox}
+
+Ubの非交換性の水素は478個である。
+MSスペクトルデータから $\rm ^2H^{15}N$標識Ubの分子量が9140.365と計測されたので、$\rm ^2H^{15}N$安定同位体標識率は以下のようになる。
+
+\[\rm ^2H \mbox{安定同位体標識率} = \frac{9140.365 - 8655.947}{478} = 101.34 \%\]
+
+
+\
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={4}]
+高分子量になるにしたがって、ペプチド・タンパク質のMSスペクトルの特徴はどのように変化するか。また、その変化が生じる理由を考察しなさい。
+\end{tcolorbox}
+
+ペプチドの分子量が大きくなるにつれてピークの半値幅が広くなる。そのため分解能が低くなる。このような変化が起きる要因として以下の３つが挙げられる。
+まず、分子量が多いとそれだけ同位体が含まれる割合が増えるため、ピークの右側が広がりやすくなる。また、分子量が大きいと分解産物ができやすくなるためピークの左側も広がりやすい。さらに、分子がイオン化した時に僅かに初速度をもっているため、その速度の違いによってズレが生じる。分子量が大きいほどその影響を大きく受けるのでピークが広がる。
+また、分子量が大きくなるほど感度が下がる。これは分子量が大きいほど気化しにくくなるから、飛行中に分解するからである。
+
+\
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={5}]
+リニアモードとリフレクトロンモードではスペクトルにどのような違いがあるか、文献を参考に述べよ。また、高分子量の試料を測定する際にはどちらのモードが適しているか。
+\end{tcolorbox}
+
+リニアーモードではレーザーによって気化したイオンが直線的に飛行するため、イオンがもつ初速度によって飛行時間にばらつきが生じる。それに対してリフレクトロンモードでは途中で電圧をかけてイオンを折り返させるため、初速度の影響をキャンセルさせている。そのためリフレクトロンモードには分子ごとの飛行時間のばらつきが小さく、ピークが鋭くなるという利点がある。しかし二回電圧を与えるために分子イオンが壊れやすく、感度が低下するというのが欠点である。高分子の試料はレーザーでの気化する効率が悪い上ので感度が低い。そのためさらに感度が低くなるリフレクトロンモードでの測定には向かず、リニアーモードでの計測が適している。
+
+\newpage
+
+
+\part*{2 蛍光消去法による、蛋白質-蛋白質複合体の親和性の決定}
+
+\begin{itemize}
+\item 実習日 : 7/8
+
+\end{itemize}
+\subsection*{実習手順}
+
+実習書に準拠し、蛍光強度と結合解離定数のリガンド—レセプター濃度との関係のモデルを立て、エクセルで数値計算し、実験結果をシミュレーションする。シミュレーション結果を基に最適な実験条件を見積もる。実際にBPTIを添加にともなうトリプシノーゲンの蛍光強度の変化を蛍光分光器で観測し、実測値を複合体形成時のトリプシノーゲンの蛍光強度と非結合型のトリプシノーゲンの蛍光強度の比の値$\beta$と結合解離定数$K_d$を手動で変化させ、グラフを見ながらモデルにフィッティングする。
+
+\subsection*{蛍光分光器の測定条件}
+\begin{itemize}
+\item 励起波長：295 nm
+\item 測定蛍光波長範囲：$320 \sim 370$ nm
+\item 励起バンド幅：10 nm
+\item 蛍光バンド幅：10 nm
+\item ホトマル電圧：400 V
+\item 波長間隔 : 0.2 nm
+
+\end{itemize}
+\subsection*{結果}
+実習で用いたエクセルの表、様々な条件における蛍光消光度のシミュレーションと蛍光消光値の実験値および理論曲線とのフィッティングのグラフは別途添付している。
+
+また、フィッティングの結果、$k_d = 4\times 10 ^{-6}, \ \ \ \beta = 1.3$となった。
+
+\subsection*{課題}
+
+\subsubsection*{(1)}
+$\rm k_d = 4\times 10 ^{-6} \ \  [M], \ \ \ \ 10^5 < k_{on} < 10^8 \ \  [M^{-1} \cdot s^{-1}]$であるから
+\[\rm k_{off} = k_d \times k_{on}\]
+に代入して
+\[\rm 0.4 < k_{off} < 400  \ \ \ \ [s^{-1}]\]
+となる。
+また、半減期$t_{1/2}$は
+\[t_{1/2} = \frac{\ln 2}{\rm{k_{off}}} \approx \frac{0.693}{\rm{k_{off}}}\]
+と表わせるので、
+\[ 1.73 \times 10^{-3} < t_{1/2} < 1.73 \ \ [s]\]
+となる。
+
+\subsubsection*{(2-1)}
+\pict{imgs/g1.png}{10}
+
+\subsubsection*{(2-2)}
+\pict{imgs/g2.png}{10}
+フィッティングの結果$\rm k_d = 37 \mu M$となった。
+
+\subsubsection*{(2-3)}
+\pict{imgs/g3.png}{10}
+フィッティングの結果$\rm k_d = 30 \mu M$となった。
+
+\subsubsection*{(3)}
+解離定数を正確に求めるにはレセプターの濃度を解離定数より小さくし、リガンドの総濃度を小さい値から大きい値まで動かすことができる必要がある。
+
+しかし、解離定数が極端に小さいとレセプターの濃度がさらに極端に小さくなってしまい、蛍光の定量的な測定が不可能となってしまう。一方、解離定数が極端に大きいときは溶解度の関係からリガンドの総濃度を大きくできないので測定が困難となる。
+
+\subsubsection*{(4)}
+等温滴定型カロメトリー法は、サンプルの標識や固定化などの修飾をする必要がない手法であり、溶液中でのタンパク質-タンパク質相互作用を熱力学的に分析できる。また、$K_d$だけでなくエンタルピー差とエントロピー差による分析が可能なので結合状態についてより詳細に分析することが可能である。
+
+表面プラズモン共鳴法はセンサーチップの上にリガンドを固定する必要がある。そのため溶液中での相互作用を解析できない。しかし、カイネティクス分析によって、結合解離定数$K_d$だけでなく、結合速度定数$k_{on}$、解離速度定数$k_{off}$も測定することが可能である。
+
+トリプトファン残基の蛍光分光法は、トリプトファンがタンパク質同士が結合することで蛍光強度が変化することで、溶液中においてタンパク質に標識する必要なく相互作用を分析することができる。蛍光分析法では結合解離定数$K_d$だけでなく、蛍光強度比も得ることができる。
+
+\pic{imgs/bk-xg1.png}
+\pic{imgs/bk-xg2.png}
+
+\newpage
+
+\part*{3 NMRによるペプチドの高次構造解析、および立体構造決定}
+
+\section*{3-1 $\rm ^1 H-NMR$測定}
+
+\begin{itemize}
+\item 実習日 7/8
+\end{itemize}
+
+\subsection*{実習手順}
+400HzのFT-NMR分光計でペプチドA、ペプチドB、Ub（軽水中、重水中）、2H標識Ub、リゾチーム、YUH1、BSA、15N標識Ub（ $\rm ^1H-^{15}N-$ 2次元NMR）を測定する。
+測定温度303K，400MHzで測定。
+
+
+\subsection*{結果}
+計測で得られたNMRスペクトルデータは添付の通り
+
+\subsection*{課題}
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={1}]
+各NMR測定試料におけるペプチド、タンパク質の濃度を求める。
+\end{tcolorbox}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+& 分子量(g/mol) & 試料量(mg) & 濃度(mol/L)        \\ \hline
+ペプチドA      & 658     & 1.0       & 0.003377 \\ \hline
+ペプチドB      & 640     & 1.0       & 0.003472 \\ \hline
+Ub         & 8556.7  & 3.0       & 0.000779 \\ \hline
+Lysozyme   & 14304.9 & 6.0       & 0.000932 \\ \hline
+YUH1       & 26424.4 & 5.1       & 0.000429 \\ \hline
+BSA        & 66462.9 & 6.0       & 0.000201 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={2}]
+ペプチドA(1回目)の測定において、観測された最大の強度を持つシグナルは何か
+\end{tcolorbox}
+
+溶媒である水の濃度が最も高いため、水分子由来のプロトンによるシグナルが最も大きい。
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={3}]
+ペプチドA(2回目)の測定において、ペプチドAの1次元$\rm ^1H-NMR$スペクトル観測のために、なぜ最大強度のシグナルを飽和する方法が必要になるのであろうか。
+\end{tcolorbox}
+
+標的とするプロトンの共鳴周波数と等しい電磁波を当て続けることで、スピンの異なるエネルギー準位間での移動が飽和し、巨視的磁化を失う。それによって水分子由来のプロトンによるシグナルが観測されにくくなるので、濃度が小さい試料に由来するシグナルを十分観測できることができるようになる。
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={4}]
+アミノ酸組成が同一でありながら、ペプチドAとペプチドBのNMRスペクトル(化学シフト)が異なる理由について考察せよ。
+\end{tcolorbox}
+
+
+スペクトルを見ると、窒素原子に結合するHや3級の炭素原子に結合するHに由来する化学シフトが異なることから、ペプチドAとペプチドBでは主鎖の部分で立体構造が異なっていることが推測される。
+加えて、MSの実験結果から、ペプチドBは環状であることが推測されるため、N末端とC末端がペプチド結合してることが考えられる。
+そのため、Nに結合した水素のシグナルが異なる化学シフトとして観測されている。
+また、ペプチドBはペプチドAに比べてシグナルの数が多く、2つの立体異性体が混ざっていると考えられる。
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={5}]
+タンパク質の1次元$\rm ^1H-NMR$スペクトルにおいて、$0\sim-1$ppmに存在するシグナルは、どのような環境にある$\rm ^1H$に由来すると考えられるか。
+\end{tcolorbox}
+
+タンパク質は特定の高次の立体構造を持つため、ある部分がある別の部分と距離的に近接することで特異なシグナルを持つことがある。
+
+$0\sim-1$ ppmのシグナルは、芳香環の鉛直方向に近接するメチルあるいはメチレン水素が、芳香環の環電流効果により発生する局所的に外部磁場の逆向きの磁場を受け、大きく遮蔽されているように観測されることで生じる。
+
+芳香環では内部の自由電子が磁場を打ち消すように運動する環電流効果が発生する。これによって外部の磁場とは逆向きの磁場が生まれて磁力が相殺することで遮蔽効果が生まれる。この効果を受けるのは芳香環の面と垂直な方向から近接するメチル基およびメチレンの水素であり、化学シフトが$0\sim-1$ ppmになる。
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={6}]
+重水中でタンパク質のNMRスペクトルを観測する際の問題点は何か。
+\end{tcolorbox}
+
+NやOに結合する水素は溶媒の水と交換される交換性のプロトンである。重水中ではペプチドの主鎖のNに結合した水素が重水素と交換し、シグナルが消えるので十分なスペクトルが得られなくなる。
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={7}]
+タンパク質の分子量増大にともなって、1次元1H-NMRはどのように変化するか。
+\end{tcolorbox}
+
+プロトンの数が増えてシグナルが重なる縮重が起こる。加えて分子量が大きいと分子の回転が遅くなりピークの半値幅が広くなる。これらの要因から一つ一つのシグナルを解析することが難しくなる。
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={8}]
+測定温度を変化させると、スペクトルはどのように変わるか推測せよ。
+\end{tcolorbox}
+
+温度が高いほど分子の回転運動が激しくなるのでピークの半値幅が狭くなるが、温度が高いとタンパク質が変性して異なるシグナルを示す可能性もある。
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={9}]
+NMRスペクトルを1次元から2次元にすることで、どのような利点があると考えられるか。
+\end{tcolorbox}
+
+$\rm ^{15}N$の化学シフトも測定することで$\rm ^1H$-NMRのスペクトルでは重なっていたシグナルを分けることができる。それによって分解能が上がり、ペプチドのアミノ酸一つ一つを読み取ることができるようになる。
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={10}]
+2次元$\rm ^1H$-$\rm ^{15}N$ HSQCスペクトルはどのような解析において有用となるだろうか。例を挙げて説明せよ。
+\end{tcolorbox}
+
+$\rm ^1H$-$\rm ^{15}N$ HSQCスペクトルではタンパク質の各アミノ酸の主鎖のNとHの情報をひとつひとつ得ることができる。したがって何かと結合したタンパク質のスペクトルと元のタンパク質のスペクトルを比較することで、タンパク質のどこに結合ができ、どのような構造の変化が起きているかを細かく観察することができる。そのためタンパク質同士の相互作用を確認したり、タンパク質を標的にしたリード化合物のスクリーニングに有用である。
+
+\newpage
+
+\section*{3-2 NMRスペクトルの帰属}
+
+\begin{itemize}
+\item 実習日 : 7/10
+
+\end{itemize}
+\subsection*{結果}
+ピークを帰属したスペクトルデータは別途添付
+
+\subsection*{課題}
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={1}]
+各々のプロトンの化学シフトの値を表にまとめよ。
+\end{tcolorbox}
+
+\subsubsection*{trans型}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+trans型 & Residue & NH   & $\rm \alpha$H        & $\rm \beta$H        & $\rm \gamma$H        & $\rm \delta$H        \\ \hline
+1 & Gly     & 7.88 & 3.92, 4.05 &         &          &          \\ \hline
+2 & Arg     & 7.73 & 4.42      & 1.71, 1.82 & 1.58, 1.58 & 3.15, 3.15 \\ \hline
+3 & Gly     & 8.71 & 3.65, 3.90 &           &           &           \\ \hline
+4 & Asp     & 8.63 & 4.35      & 2.89, 2.89 &           &           \\ \hline
+5 & Ser     & 7.81 & 4.38      & 3.89, 4.08 &           &           \\ \hline
+6 & Pro     &      & 4.37      & 1.93, 2.37 & 2.00, 2.04 & 3.78, 3.88 \\ \hline
+7 & Ala     & 7.95 & 4.32      & 1.32      &           &           \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\subsubsection*{cis型}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+cis型 & Residue & NH   & $\rm \alpha$H        & $\rm \beta$H        & $\rm \gamma$H        & $\rm \delta$H          \\ \hline
+1 & Gly     & 7.60 & 3.99, 3.99 &            &            &            \\ \hline
+2 & Arg     & 8.50 & 4.08       & 1.75, 1.75 & 1.55, 1.65 & 3.18, 3.18 \\ \hline
+3 & Gly     & 8.76 & 4.00, 3.80 &            &            &            \\ \hline
+4 & Asp     & 7.90 & 4.70       & 2.65, 2.65 &            &            \\ \hline
+5 & Ser     & 8.49 & 4.41       & 3.81, 3.81 &            &            \\ \hline
+6 & Pro     &      & 4.77       & 2.18, 2.25 & 1.72, 1.75 & 3.50, 3.60 \\ \hline
+7 & Ala     & 8.20 & 4.25       & 1.40       &            &            \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={2}]
+>$^3J$により連結しているにもかかわらず、DQF-COSYスペクトル上においてクロスピークが観測されないスピン対が存在する。この理由について考察せよ。
+\end{tcolorbox}
+
+DQF-COSYスペクトルを見るとアスパラギン酸の以下座標付近のクロスピークが観測されない。
+\[(x,y) = (8.63, \ 4.73) , \ (7.52, \ 8.63)\]
+
+これは溶媒である水の核磁気共鳴周波数に等しい周波数の電磁波を当て続けることで水の準位間のエネルギーを飽和させて巨視的磁化をゼロし、水由来のシグナルを消す操作の影響である。この操作により、水のシグナルと化学シフト値が近いアスパラギン酸の$\rm \alpha$水素のシグナルが消滅する。
+
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={3}]
+化学シフト値が近いために、シグナルが分離して観測されない場合がある。シグナルをよりよく観測するための方法について考察せよ。
+\end{tcolorbox}
+
+NMRの分解能は定磁場の磁力に依存することから、磁力と共鳴周波数の高いNMRを用いることでより分離能の高いNMRスペクトルが得られる。
+また、温度が高い方が分子の角度等の影響を受けづらいので、タンパク質が変性しない程度に温度を上げて分解能を上げる。
+さらに$\rm ^{13}C$や$\rm ^{15}N$といった$\rm ^1H$以外にもNMR activeな核種とのカップリングを見ることで、水素のピークを分離することができる。
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={4}]
+ROESYスペクトルの各クロスピークの帰属を、スペクトル上に書き込みなさい。
+\end{tcolorbox}
+
+添付のスペクトルの通り。
+
+\newpage
+
+
+\section*{3-3 NOEを利用した細胞接着タンパク質阻害ペプチドの水溶液構造決定}
+
+\begin{itemize}
+\item 実習日 : 7/11
+
+\end{itemize}
+\subsection*{課題}
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={1}]
+構造の収束の良い部分と悪い部分の違いは何によるか。
+\end{tcolorbox}
+
+NOEによって原子同士の距離の情報が与えられるのでNOEが観測されるところは構造が特定され、収束が良くなる。一方、側鎖の長いアルギニンやアスパラギンの側鎖部分はNOEのによる制約がなく、溶液中で自由に動く本来の姿を表していると言える。
+
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={2}]
+ペプチドAのROESY測定では、得られるROEクロスピークの数がペプチドBに比べて少ない。その理由を考察せよ。
+\end{tcolorbox}
+
+ペプチドAは直鎖状なので近くに存在するプロトンの数が少ない。
+ペプチドAの方が運動性が高いのでプロトンが近くに存在していてもNOE強度が低くなる。
+
+\[I   \propto f(\tau _c )/ \left<r^6\right>\]
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={3}]
+ペプチドBおよびフィブロネクチンのRGDS部分における、$\varphi$、$\psi$角を表にまとめよ。両者を比較し、活性に必要な構造について考察せよ。
+\end{tcolorbox}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+& \multicolumn{2}{c|}{Arg} & \multicolumn{2}{c|}{Gly} & \multicolumn{2}{c|}{Asp} & \multicolumn{2}{c|}{Ser} \\ \hline
+& $\varphi$           & $\psi$         &  $\varphi$          & $\psi$           &  $\varphi$           & $\psi$          &  $\varphi$            & $\psi$         \\ \hline
+ペプチドB    & -53.3       & 174.4      & 48.2       & -160.3      & -56.5       & -34        & -40.6        & 99.1      \\ \hline
+フィブロネクチン & -142.1      & -170.2     & 80.5       & -163.7      & -75.4       & -24.2      & -127.2       & 75.1      \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+上記の表から、Argの$\psi$角の列からAspの$\psi$角まで列の結合角が近いことがわかる。ペプチドBとフィブロネクチンはこの部分の立体構造が近く、位置関係が活性に必要な構造であると考えられる。
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={4}]
+ペプチドBはペプチドAよりも細胞接着阻害活性が強い。その理由を考察せよ。
+\end{tcolorbox}
+
+ペプチドBはフィブロネクチンと構造が類似しているため細胞接着阻害活性が強い。
+また、ペプチドAは直鎖状であるため結合に伴うエントロピーの減少が大きく、自由エネルギー的な観点から不利であるため細胞接着阻害活性が弱い。
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={5}]
+CilengitideがペプチドBよりも高い親和性を獲得する理由を考察せよ。
+\end{tcolorbox}
+
+相互作用に重要な構造を保ったまま、より小さな環状構造にして自由度を減少させることで自由エネルギー的に有利にしている。また、RGD配列以外の部分でインテグリンと新たな相互作用を形成している。(PheがVDW相互作用)
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={6}]
+Eptifibatideが$\alpha$IIB$\beta$ 3インテグリンに特異的に作用する機構を述べよ。
+\end{tcolorbox}
+
+炭素鎖の長さを調節して$\alpha$サブユニットの構造を見分けることで特異性が生じる。具体的にはEptifibatideの活性部位は通常のアルギニンではなく、アルギニン残基よりも炭素一つ分長い官能基であるホモアルギニンを用いている。それによって$\alpha$IIB$\beta$ 3インテグリンに特異的に高い親和性をもつようになる。
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={7}]
+TirofibanがEptifibatideよりも医薬品として有利な点を考察せよ。
+\end{tcolorbox}
+
+TirofibanはEptifibatideの活性に重要な官能基の位置関係を保ったまま、さらに低分子量化されている。これによって分子の運動の自由度を減少し、結合に伴うエントロピー減少が小さくなる。加えて、低分子量化することで合成が簡便になり、体内動態が良化する。
+
+\newpage
+
+
+\part*{4 分子間相互作用に伴う化学シフト変化}
+
+\begin{itemize}
+\item 実習日 : 7/11
+
+\end{itemize}
+\subsection*{実験方法}
+PDBから取得したUbの立体構造を表示する。Ubの立体構造から、二次構造を帰属する。
+
+$\rm ^{15}N$ Ubの$\rm ^1H$-$\rm ^{15}N$ HSQC NMRスペクトルから、YUH1添加に伴って化学シフトが変化したアミノ酸残基を特定し、Ubの立体構造上に表示する。YUH1とUbの複合体を表示し、化学シフト変化との関係を考える。
+
+\subsection*{課題}
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={1}]
+実習2-(2)の各項目についてまとめなさい。
+\end{tcolorbox}
+
+\begin{enumerate}
+\mon{ア} 各シグナルは何を表しているか。
+
+直接結合した1Hと15Nの相関スペクトルであるので、
+\begin{itemize}
+\item 主鎖のアミド基
+\item 側鎖のアミド基(アスパラギン、グルタミン)
+\item グアニジウム基(アルギニンの側鎖)
+\end{itemize}
+のシグナルを表している。プロリンは主鎖の中で唯一アミド基を持たないので注意する。
+
+\mon{イ} $\rm ^{15}N$標識されたタンパク質を用いるメリットは何か。
+
+一次元のスペクトルでは重なってしまうピークを分離することができるので残基とシグナルを１対１で対応させることが容易になる。
+
+\mon{ウ} $\rm ^{15}N$標識されたタンパク質はどのように調整するか。
+
+M9最小培地でタンパク質発現大腸菌を培養し、窒素源として$\rm ^{15}N$標識した$\rm NH_4Cl$を与えてタンパク質を合成させる。
+
+\mon{エ} $\alpha$-へリックスおよび$\beta$-ストランドを形成する残基に見られる、化学シフトの分布の違い、およびその原因。
+
+$\alpha$-へリックスは$7\sim9$ppmに集中し、$\beta$-ストランドではそれよりも低磁場側にも分布する。これはアミドの水素とカルボニルの水素結合が直線上に並ぶことができる$\beta$-ストランドが水素結合が直線状には並べない$\alpha$-へリックスよりも水素の電子が強く引かれるからである。
+\end{enumerate}
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={2}]
+YUH1添加時の、$\rm ^{15}N$ Ubの$\rm ^1H$-$\rm ^{15}N$ HSQCスペクトルの変化の仕方にいくつかのパターンがある。気づいた点を挙げ、その原因などを考察しなさい。
+\end{tcolorbox}
+
+以下のように結合状態と非結合状態の交換速度によってスペクトルの変化のパターンが変化する。
+\begin{itemize}
+\item 交換速度が化学シフト値よりも遅い場合
+
+スペクトルを観測する間に交換がないと考えられる。そのため中間の化学シフト値が現れず、結合状態と非結合状態の分子の量によってシグナル強度が決まる。
+
+\item 化学シフト値が交換速度よりも早い場合
+
+FID観測時に無数の交換状態の分子が存在するため、中間の化学シフト値が現れる。
+\item 化学シフト値と交換速度が近い場合
+中間の化学シフト値が緩慢になってシグナル強度が弱くなる。
+\end{itemize}
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={3}]
+化学シフト変化の大きな残基を、立体構造上で色付けすることにより分かったことをまとめ、化学シフト変化の原因について考察しなさい。
+\end{tcolorbox}
+
+PCのシミュレーションで立体構造上の化学シフトが変化した残基を表示させると、大部分が固まった位置に表示された。この部分がYUH1が結合する部位であると考えられる。それ以外にも化学シフトが変化している残基も存在したが、それは結合によるUb自体の構造の変化によると推測される。
+
+このような変化が起こった原因としては
+YUH1が結合したことで磁場の遮蔽・変調したりUbの$\rm ^1H$-$\rm ^{15}N$基の電子状態が変化したことが考えられる。
+
+また、化学シフト変化量は結合親和性への寄与や分子間距離の近さとは厳密な関係はないとされる。
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={4}]
+YUH1の90番目のシステインをセリンへと変異させた場合YUH1(C90S)において、Ubへの解離定数は43nMと見積もられる。
+[$\rm ^{15}N$]Ubに対して滴定していった場合、[$\rm ^{15}N$]Ubの$\rm ^1H$-$\rm ^{15}N$ HSQCスペクトルはどのように変化すると考えられるか。
+\end{tcolorbox}
+
+YUH1とUbの解離定数は$19 \ \rm \mu$Mであるため変異型のYUH1(C90S)とUbの解離定数の方が断然小さい。
+そのためYUH1(C90S)とUbの方が交換速度が小さくなる。
+したがって実習書の中列や右列のようなシグナルの挙動を示すと考えられる。
+
+
+\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={5}]
+今回実習で取り扱った化学シフト摂動法を創薬に応用する場合、どのような実験系が考えられるか。
+\end{tcolorbox}
+
+化学シフト摂動法を用いればタンパク質のどの原子に化合物が結合しているかがわかるので、化合物の親和性を上げるために化合物の形を変化させるときの判断する材料となる。例えば一つのタンパク質のアミノ酸残基との結合場所がわかれば、その隣の残基とも結合しやすい化合物を合成できる。これを繋げてことでより特異的にタンパク質に結合する化合物が得られる。
+このような手法でリード化合物からさらに活性の高い化合物を合成することが可能となる。
+
+\end{document}

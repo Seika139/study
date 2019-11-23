@@ -1,0 +1,106 @@
+\documentclass[a4paper,papersize,dvipdfmx]{jsarticle}
+\usepackage{ascmac}
+\usepackage{mathtools, amssymb,bm}
+\usepackage{comment}
+\usepackage[hiresbb]{graphicx}
+\usepackage{tcolorbox,color}
+\usepackage{here}
+\tcbuselibrary{raster,skins,breakable}
+
+\newcommand{\pic}[1]{\begin{center} \includegraphics[width=1.0\linewidth,clip]{#1} \end{center}}   %写真用
+\newcommand{\pict}[2]{\begin{center} \includegraphics[width= {#2} cm]{#1} \end{center}}   %写真用
+\newcommand{\piccap}[3]{\begin{figure}[H] \centering \includegraphics[width= {#2} cm]{#1} \caption{#3} \label{fig {#1}} \end{figure}} %キャプションつき画像
+\newcommand{\redunderline}[1]{\textcolor{red}{\underline{¥textcolor{black}{#1}}}}   %赤いアンダーライン
+\newcommand{\mon}[1]{\item[({#1})] \ }
+\newcommand{\ctext}[1]{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}%文字を丸囲みする(2桁の数字までならいける)
+
+% 画像を貼る時はjpgかjpegで、pngはうまくいかない時もある
+
+%\itemを四角で囲った数字にする場合は以下のコメントアウトを消す
+%\renewcommand{\labelenumi}{\textbf{\framebox[1.5zw]{\theenumi}}}
+
+
+%enumerateの2階層めのカウンタを1,2,3, にする時は以下のコメントアウトを消す
+\renewcommand{\theenumii}{\arabic{enumii}}
+
+%enumerateのカウンタについては以下を参照
+% http://www3.otani.ac.jp/fkdsemi/pLaTeX_manual/kajyo.html
+
+
+%enumerateの番号の出力形式を変更するには、カウンタの値を出力する命令を定義し直す。
+%レベル	カウンタ	出力する命令	デフォルトの出力
+%１	enumi	¥theenumi	アラビア数字（１，２，３，・・・）
+%２	enumii	¥theenumii	小文字のアルファベット（a，b，c，・・・）
+%３	enumiii	¥theenumiii	小文字のローマ数字（小文字のローマ数字（ⅰ，ⅱ，ⅲ，・・・）
+%４	enumiv	¥theenumiv	大文字のアルファベット（A，B，C，・・・）
+%例：¥enumiカウンタを大文字のローマ数字で出力する設定
+% ¥renewcommand{¥theenumi}{¥Roman{enumi}}
+
+%　番号の出力形式
+%命令	出力形式
+%¥arabic	アラビア数字（１、２、３、・・・）
+%¥roman	ローマ数字（ⅰ、ⅱ、ⅲ、・・・）
+%¥Roman	ローマ数字（Ⅰ、Ⅱ、Ⅲ、・・・）
+%¥alph	アルファベット（a、b、c、・・・）
+%¥Alph	アルファベット（A、B、C、・・・）
+
+% ページ番号を消す場合は以下のコメントアウトを消す
+%\pagestyle{empty}
+
+\begin{document}
+
+\title{医薬品安全性学レポート}
+\author{免疫毒性}
+%作成日を入れる場合は消す
+\date{}
+\maketitle
+
+%以下の３つからフォントサイズを選択するとよい
+%\footnotesize
+%\small
+%\normalsize
+
+
+\begin{flushright}
+南先生
+
+10191043 鈴木健一
+\end{flushright}
+
+\subsection*{免疫抑制剤}
+免疫抑制剤は、免疫系の免疫系の活動を抑制・阻害するために用いる薬剤であり、臨床的には以下のような場合に適用する。
+
+\begin{itemize}
+\item 移植した臓器や組織に対する拒絶反応の抑制
+\item 自己免疫疾患（関節リウマチ、重症筋無力症、全身性エリテマトーデス、クローン病、潰瘍性大腸炎など）の治療
+\item 自己免疫とは関係ない炎症性の疾患の治療（アレルギー性喘息の長期的抑制など）
+\end{itemize}
+
+免疫抑制剤は免疫系に非選択的に作用するため治療対象以外の感染や悪性新生物の拡大を引き起こすリスクがある。それに加え高血圧、異脂肪血症、高血糖、消化性潰瘍、肝機能障害などの副作用もあるうえに、他の薬剤の代謝や作用にまで影響することがあるので注意が必要である。
+
+
+\subsection*{カルシニューリン阻害剤}
+シクロスポリンは、真菌が産生する環状ポリペプチド抗生物質の一つであり、D-アミノ酸を1つ含む11のアミノ酸からなる。
+インターロイキン2の産生を阻害し、シクロスポリン・シクフィロン複合体がセリン・スレオニンホスファターゼであるカルシニューリンへ結合し、その活性を阻害する。
+
+\begin{figure}{H}
+\centering
+\begin{minipage}{0.22\hsize}
+\piccap{cyc.png}{2.5}{シクロスポリン}
+\end{minipage}
+\begin{minipage}{0.06\hsize}
+\hspace{2mm}
+\end{minipage}
+\begin{minipage}{0.22\hsize}
+\piccap{fk506.png}{3}{FK506}
+\end{minipage}
+\end{figure}
+
+
+FK506(タクロリムス)は肝・腎・骨髄移植時の拒絶反応抑制に用いられる。
+シクロスポリンと類似の機序により免疫抑制効果を発揮する。FK506はFKBP12との複合体がカルシニューリンに結合して
+細胞内情報伝達系を抑制し、インターロイキン-2などのサイトカインの産生を抑える。主にCYP3A4により代謝される。副作用として、腎機能障害、膵機能障害が発現する。
+
+
+
+\end{document}

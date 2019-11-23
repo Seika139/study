@@ -1,0 +1,97 @@
+\documentclass[a4paper,papersize,dvipdfmx]{jsarticle}
+\usepackage{ascmac}
+\usepackage{mathtools, amssymb,bm}
+\usepackage{comment}
+\usepackage[hiresbb]{graphicx}
+\usepackage{tcolorbox,color}
+\usepackage{here}
+\tcbuselibrary{raster,skins,breakable}
+
+\newcommand{\pic}[1]{\begin{center} \includegraphics[width=1.0\linewidth,clip]{#1} \end{center}}   %写真用
+\newcommand{\pict}[2]{\begin{center} \includegraphics[width= {#2} cm]{#1} \end{center}}   %写真用
+\newcommand{\piccap}[3]{\begin{figure}[H] \centering \includegraphics[width= {#2} cm]{#1} \caption{#3} \label{fig {#1}} \end{figure}} %キャプションつき画像
+\newcommand{\redunderline}[1]{\textcolor{red}{\underline{¥textcolor{black}{#1}}}}   %赤いアンダーライン
+\newcommand{\mon}[1]{\item[({#1})] \ }
+\newcommand{\ctext}[1]{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}%文字を丸囲みする(2桁の数字までならいける)
+
+% 画像を貼る時はjpgかjpegで、pngはうまくいかない時もある
+
+%\itemを四角で囲った数字にする場合は以下のコメントアウトを消す
+%\renewcommand{\labelenumi}{\textbf{\framebox[1.5zw]{\theenumi}}}
+
+
+%enumerateの2階層めのカウンタを1,2,3, にする時は以下のコメントアウトを消す
+\renewcommand{\theenumii}{\arabic{enumii}}
+
+%enumerateのカウンタについては以下を参照
+% http://www3.otani.ac.jp/fkdsemi/pLaTeX_manual/kajyo.html
+
+
+%enumerateの番号の出力形式を変更するには、カウンタの値を出力する命令を定義し直す。
+%レベル	カウンタ	出力する命令	デフォルトの出力
+%１	enumi	¥theenumi	アラビア数字（１，２，３，・・・）
+%２	enumii	¥theenumii	小文字のアルファベット（a，b，c，・・・）
+%３	enumiii	¥theenumiii	小文字のローマ数字（小文字のローマ数字（ⅰ，ⅱ，ⅲ，・・・）
+%４	enumiv	¥theenumiv	大文字のアルファベット（A，B，C，・・・）
+%例：¥enumiカウンタを大文字のローマ数字で出力する設定
+% ¥renewcommand{¥theenumi}{¥Roman{enumi}}
+
+%　番号の出力形式
+%命令	出力形式
+%¥arabic	アラビア数字（１、２、３、・・・）
+%¥roman	ローマ数字（ⅰ、ⅱ、ⅲ、・・・）
+%¥Roman	ローマ数字（Ⅰ、Ⅱ、Ⅲ、・・・）
+%¥alph	アルファベット（a、b、c、・・・）
+%¥Alph	アルファベット（A、B、C、・・・）
+
+% ページ番号を消す場合は以下のコメントアウトを消す
+%\pagestyle{empty}
+
+\begin{document}
+
+\title{医薬品安全性学レポート}
+\author{ミトコンドリアの機能とストレス応答}
+%作成日を入れる場合は消す
+\date{}
+\maketitle
+
+%以下の３つからフォントサイズを選択するとよい
+%\footnotesize
+%\small
+%\normalsize
+
+
+\begin{flushright}
+武田 先生
+
+10191043 鈴木健一
+\end{flushright}
+
+ミトコンドリアは独自のDNAであるミトコンドリアDNAを持ち、核にあるDNAとは別に増殖する。
+ミトコンドリアDNAは細胞内でのATP合成において大きな役目を持っているが、
+それ以外にも酸素呼吸（好気呼吸）の場として働いている。
+
+\subsection*{ミトコンドリアの起源}
+ミトコンドリアは好気性原核細胞生物である細菌がより大きな嫌気性の真核細胞生物に取り込まれたのが起源であると考えられ、
+2つの細胞が1つになって共存していることから細胞内共生説といわれる。
+その証拠となっているのが独自のDNAを持つこと以外にミトコンドリアが他オルガネラと違って二重膜からなることがあげられる。
+ミトコンドリアが細胞内で共生していることで真核生物は好気呼吸をして大量のエネルギーを利用することが可能となった。
+
+\subsection*{ミトコンドリアの役割}
+エネルギー生成のために酸素を必要としない真核細胞でもミトコンドリアのようなオルガネラを持つことがわかっており、
+このことから、ミトコンドリアはエネルギーを作り出すこと以外にも働きを持つことが推測される。
+例として、ミトコンドリアのカルシウム貯蔵機能が挙げられる。
+ミトコンドリアは迅速にカルシウムを取り込むことが可能で、それを後に放出することで、カルシウム濃度の緩衝作用を果たしている。
+カルシウムを貯蔵する小胞体と連動して働くことで細胞中のカルシウム濃度は適切に制御され、細胞中の情報伝達に重要な役割を果たしている。
+カルシウムはカルシウム輸送体によってマトリックスへ取り込まれ、ナトリウム・カルシウム対向輸送とカルシウム依存性カルシウム放出系によって放出される。
+これによってセカンドメッセンジャー系が発動して神経伝達物質やホルモンの放出が引き起こされる。
+
+\subsection*{ミトコンドリアとアポトーシス誘導}
+
+小胞体でタンパク質の折りたたみ能力が低下して異常タンパク質が蓄積するなどの原因で小胞体が過剰なストレスをうけるとカルシウムイオンの放出が行われる。
+放出されたカルシウムイオンがミトコンドリアに取り込まれると、ミトコンドリア膜透過性遷移孔が開いて透過性が亢進し、
+シトクロムcなどの各種アポトーシス誘導因子が放出される。
+シトクロムcは APAF-1 と結合し、多量体化してアポトソームと呼ばれる複合体を形成する。
+アポトソームは誘導型カスパーゼであるCaspase-9を活性化し、それが実行型カスパーゼである Caspase-3、Caspase-7 を切断・活性化することで、アポトーシスが進行する。
+
+\end{document}

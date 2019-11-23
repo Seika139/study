@@ -120,9 +120,9 @@ def tcolorbox(str):
                     break
             if sharp_n > 2:
                 str = str[:sharp_n+1].replace("#","") + str[sharp_n+1:]
-                str = r"\begin{tcolorbox}[colback=white,colbacktitle=black,coltitle=white,title={" + str[3:] + r"}]"
+                str = '\n' + r"\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black,title={" + str[3:] + r"}]"
             else:
-                str = r"\begin{tcolorbox}[colback=white,colbacktitle=black,coltitle=white]" + "\n" + str[2:]
+                str = '\n' + r"\begin{tcolorbox}[colback=white,colbacktitle=black!10!white,coltitle=black]" + "\n" + str[2:]
             dix["tcolorbox"] = 1
         elif str[:2] == "> " and dix["tcolorbox"] == 1:
             str = str[2:]

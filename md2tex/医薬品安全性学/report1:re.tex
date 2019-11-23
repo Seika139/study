@@ -1,0 +1,112 @@
+\documentclass[a4paper,papersize,dvipdfmx]{jsarticle}
+\usepackage{ascmac}
+\usepackage{mathtools, amssymb,bm}
+\usepackage{comment}
+\usepackage[hiresbb]{graphicx}
+\usepackage{tcolorbox,color}
+\usepackage{here}
+\tcbuselibrary{raster,skins,breakable}
+
+\newcommand{\pic}[1]{\begin{center} \includegraphics[width=1.0\linewidth,clip]{#1} \end{center}}   %写真用
+\newcommand{\pict}[2]{\begin{center} \includegraphics[width= {#2} cm]{#1} \end{center}}   %写真用
+\newcommand{\piccap}[3]{\begin{figure}[H] \centering \includegraphics[width= {#2} cm]{#1} \caption{#3} \label{fig {#1}} \end{figure}} %キャプションつき画像
+\newcommand{\redunderline}[1]{\textcolor{red}{\underline{¥textcolor{black}{#1}}}}   %赤いアンダーライン
+\newcommand{\mon}[1]{\item[({#1})] \ }
+\newcommand{\ctext}[1]{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}%文字を丸囲みする(2桁の数字までならいける)
+
+
+% 複数図を横に並べるときのヒント http://wright.mydns.jp/?p=704
+% \begin{figure}{H}
+% \centering
+% \begin{minipage}{0.22\hsize}
+% \piccap{}{}{}
+% \end{minipage}
+% \begin{minipage}{0.06\hsize}
+% \hspace{2mm}
+% \end{minipage}
+% \begin{minipage}{0.22\hsize}
+% \piccap{}{}{}
+% \end{minipage}
+% \end{figure}
+
+% 画像を貼る時はjpgかjpegで、pngはうまくいかない時もある
+
+%\itemを四角で囲った数字にする場合は以下のコメントアウトを消す
+%\renewcommand{\labelenumi}{\textbf{\framebox[1.5zw]{\theenumi}}}
+
+
+%enumerateの2階層めのカウンタを1,2,3, にする時は以下のコメントアウトを消す
+\renewcommand{\theenumii}{\arabic{enumii}}
+
+%enumerateのカウンタについては以下を参照
+% http://www3.otani.ac.jp/fkdsemi/pLaTeX_manual/kajyo.html
+
+
+%enumerateの番号の出力形式を変更するには、カウンタの値を出力する命令を定義し直す。
+%レベル	カウンタ	出力する命令	デフォルトの出力
+%１	enumi	¥theenumi	アラビア数字（１，２，３，・・・）
+%２	enumii	¥theenumii	小文字のアルファベット（a，b，c，・・・）
+%３	enumiii	¥theenumiii	小文字のローマ数字（小文字のローマ数字（ⅰ，ⅱ，ⅲ，・・・）
+%４	enumiv	¥theenumiv	大文字のアルファベット（A，B，C，・・・）
+%例：¥enumiカウンタを大文字のローマ数字で出力する設定
+% ¥renewcommand{¥theenumi}{¥Roman{enumi}}
+
+%　番号の出力形式
+%命令	出力形式
+%¥arabic	アラビア数字（１、２、３、・・・）
+%¥roman	ローマ数字（ⅰ、ⅱ、ⅲ、・・・）
+%¥Roman	ローマ数字（Ⅰ、Ⅱ、Ⅲ、・・・）
+%¥alph	アルファベット（a、b、c、・・・）
+%¥Alph	アルファベット（A、B、C、・・・）
+
+% ページ番号を消す場合は以下のコメントアウトを消す
+%\pagestyle{empty}
+
+\begin{document}
+
+\title{医薬品安全性学レポート}
+\author{循環器毒性}
+%作成日を入れる場合は消す
+\date{}
+\maketitle
+
+%以下の３つからフォントサイズを選択するとよい
+%\footnotesize
+%\small
+%\normalsize
+
+
+
+\begin{flushright}
+垣塚 先生
+
+10191043 鈴木健一
+\end{flushright}
+
+\subsection*{循環器毒性}
+近年の日本では悪性新生物が死因の第一位となっており、多くのがんの治療法が開発されている。
+抗がん剤はがん治療に用いられる薬剤だが、心臓などの循環器に毒性があることを念頭におかねばならない。
+循環器毒性は心毒性と血管毒性の二つに大別され、
+心毒性のうち興奮電導系に対する毒性では不整脈が、
+興奮収縮連関に対する毒性によって心不全が誘発される。
+また、血管平滑筋の収縮により高血圧が、血管内皮細胞の障害によって動脈硬化などのリスクが発生する。
+
+\subsection*{アドリアマイシン心筋症}
+アドリアマイシンをはじめとするアントラサイクリン系薬剤は広い範囲のがん治療に用いられており、
+白血病，リンパ腫などの造血器腫瘍や乳がんなど固形癌に有効である。
+しかし，累積投与量に依存してアドリアマイシン心筋症が発症するリスクが治療継続の制限になることが多い。
+アドリアマイシン心筋症は累積投与量に依存して発現頻度が高くなり、
+最終投与後から約1年における心機能低下・心不全発症頻度は3〜26％である。
+心機能低下から心不全を発症した場合は70日以内に50％以上が死亡する。
+
+\subsection*{トラスツズマブ心毒性}
+分子標的薬であるトラスツズマブはHER2（ErbB2）陽性の乳がんの化学療法に使用され、
+心機能低下および心不全の発症頻度は2〜27％である。
+アントラサイクリン心筋症とは異なり蓄積投与量依存性ではないため投与の中止によりその変化は可逆性であるとされる。
+しかし、アドリアマイシンと同時・連続併用した場合（禁忌）には、前者の非可逆性心毒性をさらに増強する。
+
+\subsection*{心毒性の軽減}
+心不全をはじめとする心疾患は悪性腫瘍よりも予後が悪いためにがん治療でも心毒性へのリスク管理が必要となる。
+現在はプロドラッグやアンジオテンシンⅡ受容体拮抗薬、鉄キレート剤などの手法により心毒性を軽減する試みがなされている。
+
+\end{document}

@@ -29,7 +29,7 @@ class Plot_master():
          a = self.lr_1(x, y)
          y1 = a * x
          plt.plot(x, y1, c='#566bd4')
-         plt.text(0,0.02, 'y='+ str(round(a,4)) +'x')
+         plt.text(x[0],y[0],'y='+ str(round(a,4)) +'x')
          corr = round(np.corrcoef(x,y)[0][1],5)
          plt.text(50,0.02,"R = {}".format(corr))
 

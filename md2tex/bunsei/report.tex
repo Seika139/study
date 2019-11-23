@@ -1,0 +1,228 @@
+\documentclass[a4paper,papersize,dvipdfmx]{jsarticle}
+\usepackage{ascmac}
+\usepackage{mathtools, amssymb,bm}
+\usepackage{comment}
+\usepackage[hiresbb]{graphicx}
+\usepackage{tcolorbox,color}
+\usepackage{here}
+\tcbuselibrary{raster,skins,breakable}
+
+\newcommand{\pic}[1]{\begin{center} \includegraphics[width=1.0\linewidth,clip]{#1} \end{center}}   %写真用
+\newcommand{\pict}[2]{\begin{center} \includegraphics[width= {#2} cm]{#1} \end{center}}   %写真用
+\newcommand{\piccap}[3]{\begin{figure}[H] \centering \includegraphics[width= {#2} cm]{#1} \caption{#3} \label{fig {#1}} \end{figure}} %キャプションつき画像
+\newcommand{\redunderline}[1]{\textcolor{red}{\underline{¥textcolor{black}{#1}}}}   %赤いアンダーライン
+\newcommand{\mon}[1]{\item[({#1})] \ }
+\newcommand{\ctext}[1]{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}%文字を丸囲みする(2桁の数字までならいける)
+
+
+% 複数図を横に並べるときのヒント http://wright.mydns.jp/?p=704
+% \begin{figure}{H}
+% \centering
+% \begin{minipage}{0.22\hsize}
+% \piccap{}{}{}
+% \end{minipage}
+% \begin{minipage}{0.06\hsize}
+% \hspace{2mm}
+% \end{minipage}
+% \begin{minipage}{0.22\hsize}
+% \piccap{}{}{}
+% \end{minipage}
+% \end{figure}
+
+% 画像を貼る時はjpgかjpegで、pngはうまくいかない時もある
+
+%\itemを四角で囲った数字にする場合は以下のコメントアウトを消す
+%\renewcommand{\labelenumi}{\textbf{\framebox[1.5zw]{\theenumi}}}
+
+
+%enumerateの2階層めのカウンタを1,2,3, にする時は以下のコメントアウトを消す
+\renewcommand{\theenumii}{\arabic{enumii}}
+
+%enumerateのカウンタについては以下を参照
+% http://www3.otani.ac.jp/fkdsemi/pLaTeX_manual/kajyo.html
+
+
+%enumerateの番号の出力形式を変更するには、カウンタの値を出力する命令を定義し直す。
+%レベル	カウンタ	出力する命令	デフォルトの出力
+%１	enumi	¥theenumi	アラビア数字（１，２，３，・・・）
+%２	enumii	¥theenumii	小文字のアルファベット（a，b，c，・・・）
+%３	enumiii	¥theenumiii	小文字のローマ数字（小文字のローマ数字（ⅰ，ⅱ，ⅲ，・・・）
+%４	enumiv	¥theenumiv	大文字のアルファベット（A，B，C，・・・）
+%例：¥enumiカウンタを大文字のローマ数字で出力する設定
+% ¥renewcommand{¥theenumi}{¥Roman{enumi}}
+
+%　番号の出力形式
+%命令	出力形式
+%¥arabic	アラビア数字（１、２、３、・・・）
+%¥roman	ローマ数字（ⅰ、ⅱ、ⅲ、・・・）
+%¥Roman	ローマ数字（Ⅰ、Ⅱ、Ⅲ、・・・）
+%¥alph	アルファベット（a、b、c、・・・）
+%¥Alph	アルファベット（A、B、C、・・・）
+
+% ページ番号を消す場合は以下のコメントアウトを消す
+%\pagestyle{empty}
+
+\begin{document}
+
+\title{薬学実習4 分子生物学教室}
+\author{10191043 鈴木健一}
+%作成日を入れる場合は消す
+\date{}
+\maketitle
+
+%以下の３つからフォントサイズを選択するとよい
+%\footnotesize
+%\small
+%\normalsize
+
+
+\part*{1 マウス神経系前駆細胞の分化運命の解析}
+
+\section*{目的}
+RNA sequencing の生データを扱い、神経系前駆細胞の分化運命の生業に関与する可能性のある分子を抽出する。
+
+\section*{手法}
+マウス胎児大脳から採取した神経前駆細胞をin vitro で培養した細胞を用いて細胞免疫染色を行う。
+今回は神経系前駆細胞の発生時期による変化とFGF2の有無による変化を観察する。
+
+
+\section*{結果}
+画像は添付した紙の通りである。
+理想的な画像をとることができた昨年の物と比べるとGAFPの蛍光が少ないことが顕著にみて取れる。
+またニューロンの形成も見ることはできるが昨年のものほどではないという結果であった。
+
+\section*{考察}
+3DIVのFGF2の有無からTuJ1の蛍光の変化がみられる。
+FGF2によって神経細胞の複製が活発になって神経系前駆細胞ニューロンへの分化が進んだということが考えられる。
+また、9DIVではアストロサイトの発達が顕著であった。
+以上の結果から培養3日目付近では神系系前駆細胞からニューロンへの分化が活性化し、
+培養9日目付近では神系系前駆細胞からアストロサイトへの分化が活性化することが推測される。
+
+
+\section*{課題}
+
+Pytohnの外部ライブラリであるPandasを用いて、
+Nocthに関連する遺伝子とそうでないものとそれぞれについて、
+発現量の変化が時期によって大きく変化するものをソートし、
+その中でも特徴的なものについて調べた。
+
+\subsection*{1. Notch関連遺伝子}
+
+図のように発生が進むにつれて発現量が大きく減少するNotch1遺伝子について調べた。
+Notch1については以下のようなことがわかっている。
+
+\begin{itemize}
+\item Notch1の細胞内ドメインは核移行することで未分化性の維持に関わるHes1/5
+とNotchのリガンドであるDeltaの発現を誘導する。
+
+\item Notch1をノックアウトした胎児では胎生中期に神経幹細胞の激減し死に至る。
+
+\item 神経幹細胞においてNotch3と共に強制発現すると神経幹細胞からアストロサイトへの分化が誘導される。
+\end{itemize}
+これらの結果からNotch1は神経幹細胞の未分化の維持に重要な役割を果たし、
+ニューロンやアストロサイトの数を適切に制御するという役割があると考えられる。
+
+\begin{table}[H]
+  \centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+分化段階      & E12   & E13    & E14  & E16  \\ \hline
+発現量(rpkm) & 66.03 & 29.865 & 7.85 & 2.85 \\ \hline
+\end{tabular}
+\end{table}
+
+
+\subsection*{2. 非Notch関連遺伝子}
+図のように発現量が大幅に上昇するSlco1c1について調査した。
+
+\pict{images/npc.png}{10}
+
+Slco1c1は脳での発現量が多く、
+有機アニオントランスポーターOatp1c1をコードするがわかっている。
+Oatp1c1はT4(チロキシン)を選択的に細胞内に取り込むことで甲状腺ホルモンの取り込みに貢献している。
+
+甲状腺ホルモンはミエリン鞘形成に大きく貢献している。
+これは先天性甲状腺機能障害の脳におけるミエリン鞘の形成異常に甲状腺ホルモンを補填すると回復することからも示されている。
+
+また、発現量が発生後期に上昇することから
+甲状腺ホルモンがグリア細胞の特にオリゴデンドロサイトに作用することから
+グリア細胞に特異的に発現すると考えられる。
+
+\pict{images/ncbi.png}{6}
+
+\part*{2 マウス遺伝子型の解析}
+
+\section*{目的}
+遺伝子破壊について学ぶにあたって、実際にゲノム改変を検出する実験を行う。
+
+\section*{手法}
+与えられた3サンプルと目的試料のDNAをPCR法で培養し、電気泳動でDNAが伸長した結果を観察する。
+PCRで用いたプライマーで判定する遺伝子ははNestin-Cre、RING1B、human K14の３種類である。
+
+\section*{結果}
+電気泳動の結果は以下の画像のようになった。何箇所かはゲルへの注入を失敗するなどの不手際があったが、
+遺伝子を判定するには十分な量のバンドを得ることができた。
+\pict{images/1024.jpg}{7}
+
+
+\section*{考察}
+画像で赤く囲まれているように目的試料のRING1BとNestin-Creが試料Aと同じ結果になっていることから、
+目的試料のDNAは試料Aのマウスと同じタイプのもの由来であると判明した。
+
+\section*{課題}
+
+\begin{enumerate}
+\mon{1}
+GFP発光オワンクラゲから見つかった緑色蛍光タンパク質である。
+GFPにUVを照射しても蛍光を発することから，生体蛍光マーカーとして使用されている。
+GFPをタグとして使うことには生きた細胞でタンパク質の動的な挙動を追跡できるという利点があるため、
+遺伝子が発現を判別するためのレポーター遺伝子として広く用いられている。
+
+検出までの大まかな流れは以下のようになる。
+\begin{itemize}
+\item 目的のタンパク質をコードしている遺伝子やcDNAを植物用GFP発現ベクターに組み込む
+\item 得られたプラスミドをパーティクルガン法などで標的細胞に導入する。
+\item 遺伝子が増幅したのちに蛍光を検出する。
+\end{itemize}
+
+\mon{2}
+RNA干渉とは、2本鎖RNAが複数のタンパク質と複合体を作り相同な塩基配列をもつメッセンジャーRNAと特異的に対合して切断することによって
+遺伝子の発現を抑える現象である。
+RNA干渉は、ウイルス感染に対する防御機構やゲノムの安定性を保つことにも関わるなど、生体内のさまざまな場面で重要な役割を果たしている。
+また、マイクロRNAと呼ばれる短い2本鎖RNAが多くの遺伝子の発現調節をしていることも明らかになってきている。
+さらにRNA干渉は遺伝子の機能を人為的に抑制することにも応用できるため、遺伝子機能解析の汎用性の高いツールとしても注目されている。
+
+CRISPR-Cas9とは、DNA二本鎖を切断してゲノム配列の任意の場所を削除、置換、挿入することができる新しい遺伝子改変技術である。
+新たなゲノム編集ツールとして2013年に報告され、標的遺伝子の変更や複数遺伝子をターゲットとすることが容易であるため、
+幅広い種類の細胞や生物種において、ゲノム編集や修正に利用されている。
+\end{enumerate}
+
+\part*{3 マウス大脳新皮質の構造の観察}
+
+\section*{目的}
+ゴルジ染色及び免疫組織染色した野生型のマウスとReelerマウスの大脳の神経細胞の形態や層構造を観察し、比較する。
+
+\section*{手法}
+実験１で行った細胞免疫染色を大脳組織切片について行う。
+野生型のマウスとReelerマウスの大脳組織切片を顕微鏡で観察し記録する。
+
+\section*{結果・考察}
+スケッチを含む観察結果などは別途提出済みである。
+
+\section*{課題}
+生物の進化の過程において哺乳類の脳は他の脳領域を覆い隠すほどに拡大している。他の動物とは異なり脳の層構造が“inside-out”様式をもって形成されるのは
+辺縁帯に局在するCajal-Retzius細胞から分泌されるReelinが重要な役割をとされている。近年の研究でReelinは移動の終点の近くにおいてニューロンの移動様式の変換を促進することや、細胞骨格を制御すること、そののちにニューロンを集合させる機能をもつことなどが明らかにされた。また、産生されたばかりのニューロンはサブタイプの決定において可塑性をもつことが明らかにされ、ニューロンの移動により適切に配置された場所において特殊な細胞外環境に曝露されることにより、その場所に応じた特異的なサブタイプに分化するよう制御されるしくみの存在が示された。
+このような研究結果から、神経細胞が脳内を移動して特異的に分化することが脳の高次的な機能の獲得につながったと言えるだろう。
+神経細胞の移動をよりダイナミックに行うには、脳の層構造が内から外に広がるように堆積していく方がより大きい移動距離を稼げるからと推測される。
+
+
+\subsection*{参考資料}
+\small
+\begin{itemize}
+\item http://www.f.kpu-m.ac.jp/k/jkpum/pdf/123/123-9/nomura09.pdf
+\item https://www.s.u-tokyo.ac.jp/ja/story/newsletter/keywords/04/03.html
+\item https://www.cosmobio.co.jp/product
+\item https://www.promega.co.jp/pdf/reporter \ guide\_2015.pdf
+\end{itemize}
+
+\end{document}

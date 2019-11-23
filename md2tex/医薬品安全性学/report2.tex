@@ -1,0 +1,96 @@
+\documentclass[a4paper,papersize,dvipdfmx]{jsarticle}
+\usepackage{ascmac}
+\usepackage{mathtools, amssymb,bm}
+\usepackage{comment}
+\usepackage[hiresbb]{graphicx}
+\usepackage{tcolorbox,color}
+\usepackage{here}
+\tcbuselibrary{raster,skins,breakable}
+
+\newcommand{\pic}[1]{\begin{center} \includegraphics[width=1.0\linewidth,clip]{#1} \end{center}}   %写真用
+\newcommand{\pict}[2]{\begin{center} \includegraphics[width= {#2} cm]{#1} \end{center}}   %写真用
+\newcommand{\piccap}[3]{\begin{figure}[H] \centering \includegraphics[width= {#2} cm]{#1} \caption{#3} \label{fig {#1}} \end{figure}} %キャプションつき画像
+\newcommand{\redunderline}[1]{\textcolor{red}{\underline{¥textcolor{black}{#1}}}}   %赤いアンダーライン
+\newcommand{\mon}[1]{\item[({#1})] \ }
+\newcommand{\ctext}[1]{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}%文字を丸囲みする(2桁の数字までならいける)
+
+% 画像を貼る時はjpgかjpegで、pngはうまくいかない時もある
+
+%\itemを四角で囲った数字にする場合は以下のコメントアウトを消す
+%\renewcommand{\labelenumi}{\textbf{\framebox[1.5zw]{\theenumi}}}
+
+
+%enumerateの2階層めのカウンタを1,2,3, にする時は以下のコメントアウトを消す
+\renewcommand{\theenumii}{\arabic{enumii}}
+
+%enumerateのカウンタについては以下を参照
+% http://www3.otani.ac.jp/fkdsemi/pLaTeX_manual/kajyo.html
+
+
+%enumerateの番号の出力形式を変更するには、カウンタの値を出力する命令を定義し直す。
+%レベル	カウンタ	出力する命令	デフォルトの出力
+%１	enumi	¥theenumi	アラビア数字（１，２，３，・・・）
+%２	enumii	¥theenumii	小文字のアルファベット（a，b，c，・・・）
+%３	enumiii	¥theenumiii	小文字のローマ数字（小文字のローマ数字（ⅰ，ⅱ，ⅲ，・・・）
+%４	enumiv	¥theenumiv	大文字のアルファベット（A，B，C，・・・）
+%例：¥enumiカウンタを大文字のローマ数字で出力する設定
+% ¥renewcommand{¥theenumi}{¥Roman{enumi}}
+
+%　番号の出力形式
+%命令	出力形式
+%¥arabic	アラビア数字（１、２、３、・・・）
+%¥roman	ローマ数字（ⅰ、ⅱ、ⅲ、・・・）
+%¥Roman	ローマ数字（Ⅰ、Ⅱ、Ⅲ、・・・）
+%¥alph	アルファベット（a、b、c、・・・）
+%¥Alph	アルファベット（A、B、C、・・・）
+
+
+\pagestyle{empty}
+
+\begin{document}
+
+\title{医薬品安全性学レポート}
+\author{薬害と医薬品の安全性管理}
+%作成日を入れる場合は消す
+\date{}
+\maketitle
+
+%以下の３つからフォントサイズを選択するとよい
+%\footnotesize
+%\small
+%\normalsize
+
+
+\begin{flushright}
+名黒 先生
+
+10191043 鈴木健一
+\end{flushright}
+
+\subsection*{創薬における安全性管理のシステム}
+薬の有用性と危険性を管理するために、新薬が販売される前から市販が開始された後まで何回もの試験を行う。
+創薬段階ではヒト以外の生物を対象とする非臨床試験を行いリード化合物を探索する。
+さらに完成した薬を販売するにあたっては第一層試験から第四層試験まである臨床試験を実施することで慎重に安全性を精査する。
+さらに、販売が開始された後も、稀に発生する有害作用を防止するために市販後調査を行う。
+このように繰り返し薬の有用性と安全性と試験することで薬害による被害を最小限に抑える仕組みが取られている。
+
+\subsection*{薬害の具体例と歴史的考察}
+
+薬害と副作用は定義的に異なるものである。
+副作用というのは薬が発揮する期待すべき作用以外に発生する効果である科学的な表現系であるのに対し、
+薬害は状況や事例によって一意に定められない社会的な事象である。
+例えば、がん患者にとって抗がん剤はなくてはならない薬であるが、実際には発がん性をもつものがほとんどであり、
+健康な人にとっては薬害となりうる薬である。
+このように薬害は単に薬の効果によって定められるものではなく、使用によって被害を受けた服用者が発生することが要因となる。
+
+薬害の例として有名な薬がサリドマイドである。
+睡眠薬として用いられた薬だが、妊婦が服用すると先天性短肢症や奇形児といった被害が生じる。
+サリドマイドが有名な薬害の例となったのは、海外で危険性が認められて即座に回収されたのにもかかわらず、
+日本では販売中止に至るまでに2年もかかり無駄な被害が拡大したからである。
+他にもソリブジン、クロロキン、ジエチルスチルベストロールなど特定の症状にとっては有用な薬が、
+場合によっては深刻な副作用を生じる薬ために薬害と認定された過去がある。
+
+
+今後、創薬研究を重ね医療の発展を進めるにあたって、薬の副作用とうまく付き合い、薬害を最小限に留める工夫や
+副作用を患者に正確に伝えることが必要だと言えるだろう。
+\end{document}

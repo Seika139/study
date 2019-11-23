@@ -1,0 +1,114 @@
+\documentclass[a4paper,papersize,dvipdfmx]{jsarticle}
+\usepackage{ascmac}
+\usepackage{mathtools, amssymb,bm}
+\usepackage{comment}
+\usepackage[hiresbb]{graphicx}
+\usepackage{tcolorbox,color}
+\usepackage{here}
+\tcbuselibrary{raster,skins,breakable}
+
+\newcommand{\pic}[1]{\begin{center} \includegraphics[width=1.0\linewidth,clip]{#1} \end{center}}   %写真用
+\newcommand{\pict}[2]{\begin{center} \includegraphics[width= {#2} cm]{#1} \end{center}}   %写真用
+\newcommand{\piccap}[3]{\begin{figure}[H] \centering \includegraphics[width= {#2} cm]{#1} \caption{#3} \label{fig {#1}} \end{figure}} %キャプションつき画像
+\newcommand{\redunderline}[1]{\textcolor{red}{\underline{¥textcolor{black}{#1}}}}   %赤いアンダーライン
+\newcommand{\mon}[1]{\item[({#1})] \ }
+\newcommand{\ctext}[1]{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}%文字を丸囲みする(2桁の数字までならいける)
+
+% 画像を貼る時はjpgかjpegで、pngはうまくいかない時もある
+
+%\itemを四角で囲った数字にする場合は以下のコメントアウトを消す
+%\renewcommand{\labelenumi}{\textbf{\framebox[1.5zw]{\theenumi}}}
+
+
+%enumerateの2階層めのカウンタを1,2,3, にする時は以下のコメントアウトを消す
+\renewcommand{\theenumii}{\arabic{enumii}}
+
+%enumerateのカウンタについては以下を参照
+% http://www3.otani.ac.jp/fkdsemi/pLaTeX_manual/kajyo.html
+
+
+%enumerateの番号の出力形式を変更するには、カウンタの値を出力する命令を定義し直す。
+%レベル	カウンタ	出力する命令	デフォルトの出力
+%１	enumi	¥theenumi	アラビア数字（１，２，３，・・・）
+%２	enumii	¥theenumii	小文字のアルファベット（a，b，c，・・・）
+%３	enumiii	¥theenumiii	小文字のローマ数字（小文字のローマ数字（ⅰ，ⅱ，ⅲ，・・・）
+%４	enumiv	¥theenumiv	大文字のアルファベット（A，B，C，・・・）
+%例：¥enumiカウンタを大文字のローマ数字で出力する設定
+% ¥renewcommand{¥theenumi}{¥Roman{enumi}}
+
+%　番号の出力形式
+%命令	出力形式
+%¥arabic	アラビア数字（１、２、３、・・・）
+%¥roman	ローマ数字（ⅰ、ⅱ、ⅲ、・・・）
+%¥Roman	ローマ数字（Ⅰ、Ⅱ、Ⅲ、・・・）
+%¥alph	アルファベット（a、b、c、・・・）
+%¥Alph	アルファベット（A、B、C、・・・）
+
+% ページ番号を消す場合は以下のコメントアウトを消す
+%\pagestyle{empty}
+
+\begin{document}
+
+\title{薬学実習4 遺伝学教室}
+\author{10191043 鈴木健一}
+%作成日を入れる場合は消す
+\date{}
+\maketitle
+
+%以下の３つからフォントサイズを選択するとよい
+%\footnotesize
+%\small
+%\normalsize
+
+
+\part*{実習A 胚発生時における細胞死の観察}
+
+\section*{目的}
+抗活性化型Dcp1抗体を用いた免疫染色により、embryoの初期発生時における細胞死を検出し、細胞死実行に関わる遺伝子のショウジョウバエ変異体系統を同定する。
+
+\section*{方法}
+実習書に基づいてTAスタッフの指示に従って実験を行った。
+\section*{結果}
+免疫染色したショウジョウバエのembryoを４つのチャンネルで観察し、そのうちの特定のサンプルをもとに比較が容易となる図を作成した。
+まとめた図の横の列は左から順に野生型、変異型A、変異型Bとなっており、
+縦の列は上から順に
+Cy3（cleaved-Dcp1）、
+明視野、
+Alexa488（ELAV）、
+Hoechst 33342（核）の画像となっている。
+
+明視野やAlexa488の画像からもわかるように
+野生型のembryoはかなり発生ステージが進んでおり、
+神経細胞の局在が目立っていることからステージ13程度であると考えられる。
+変異型Aは野生型ほど進んでないが、ステージ11程度まで進んでいると思われる。
+変異型Bは分化が進んでおらずステージ9程度であるとみられる。
+
+\section*{考察}
+サンプル数が少なかったためにステージが同じembryo同士での比較は難しく、
+また系統ごとに異なる細胞死の度合いを明確に説明するのは困難であった。
+
+\pic{id.png}
+
+\newpage
+
+\part*{実習B 細菌感染に対する感受性の検討}
+
+\part*{目的}
+各ショウジョウバエ系統に大腸菌を感染させ、ジプテリシンの発現をRT-PCR法によって検出することにより、
+自然免疫系に異常がある変異体を同定する。
+
+\section*{方法}
+実習書に基づいてTAスタッフの指示に従って実験を行った。
+\section*{結果}
+ショウジョウバエのtotal RNAからcDNAを合成し、ジプテリシン遺伝子とG3PDH遺伝子をPCR法により増幅した。
+その後電気泳動によりジプテリシンとG3PDHのバンドにより変異の観察を行った結果が以下の画像のようになった。
+\pict{edo.jpg}{8}
+
+\section*{考察}
+電気泳動において野生型と変異型Cとの両方のバンドがみられなかった。
+マーカーから泳動自体の結果は正しく反映されているので大腸菌の導入やPCRの段階で何らかの不手際があったと想定される。
+
+実験を総合して変異体A,B,Cがそれぞれどの変異体なのかを判定することは不可能であった。
+そもそもの実験プロトコルに課題があると捉えて、より精度のある判定をなすことができる実験にすることが大事だと思われる。
+
+\end{document}

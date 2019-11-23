@@ -1,0 +1,45 @@
+2001 Nature Publishing Group http://structbio.nature.com
+editorial nature structural
+biology November 2001 vol. 8 no. 11
+
+Whither crystallography
+The start of the 21st century has seen two great years for protein crystallography.
+It is difficult to remember when so many long awaited structures have been solved in so short an amount of time.
+Indeed one crystallographer (who will remain anonymous) commented following the publication of the structure of the ribosome
+"it is finished things for us; we might as well all pack up and some go home".
+Not a serious comment perhaps, but is there a nugget of truth within it?
+What big goals left for protein crystallography?
+
+Historical milestones
+Once it was demonstrated that X-rays diffracting from a protein crystal contain sufficient information to determine its atomic structure, the more complex puzzles were at first relatively obvious: to obtain the structure of a larger protein, of an enzyme—substrate complex, of an intact virus particle, of a protein bound to nucleic acid, of a membrane protein, etc.
+Each new structure provided a specific step forward, each a harder puzzle due to its size, the resolution needed or any number of other complicating factors.
+In more recent years, the proliferation of protein structures has made the milestones seem closer together; nonetheless certain results standout — GroEL—GroES, F1-ATPase, the nucleosome, a bacterial potassium ion channel, photosystem I and the ribosome, to list but a few.
+The unveiling of such structures provides a moment of revelation, but with only a limited number of unique folds available, such revelations may become less frequent.
+Many of the milestone structures owe their status to their size — photosystems and ribosomes are large enough that they can even be seen under light microscopes.
+Beyond searching for the next 'big' target, perhaps other frontiers are worth exploring.
+
+Space and time
+One of the challenges could be to determine structures at ultra-high resolution.
+In the Protein Data Bank, only a handful of proteins are solved to below 1 Å resolution — the highest resolution structure of a protein is of crambin at 0.54 Å (ref. 4) — and many structures are reported in the 2—2.5 Å range.
+While the positions of amino acid side chains are clearly defined at such resolution, for many enzymes, they provide barely enough information to determine the exact mechanisms of catalysis.
+Certainly no hvdrogen atoms can be placed — for that a resolution better than 1.2 is needed — but to really get a grip on the chemistry of most reactions, the shapes of the electron clouds, not just the positions of the atoms, need to be accurately mapped.
+Even in an ultrahigh resolution structure, the dynamics of a protein, including the gross and subtle conformational changes involved in its function, are usually absent from the picture.
+However, considerable progress has now been made in catching the short-lived structures that form in various reaction intermediates.
+These studies typically involve careful manipulation of crystals to synchronize and slow down the reactions so that as much of the reaction intermediate as possible is present during data collection.
+For example, this approach has been used to study the light-induced change of bacteriorhodopsin (for example ref. 5) and the reaction cycle of isopenicillin N synthase.
+In the search for ever-increasing resolution, whether spatial or temporal, technological advances are opening up new possibilities.
+Third generation synchrotron sources bring faster collection of more extensive data sets.
+What might be achieved with an even more intense source such as a free electron X-ray laser seems almost in the realm of science fiction (see for example refs 7,8).
+
+Integrated approaches
+Protein crystallography is also diversifying to form partnerships with other structural techniques.
+The fitting of crystallographic structures into cryoelectron microscopy-derived densities is now almost common place (see for example refs 9, 10).
+Atomic force microscopy has been coupled to crystallography with great success (see for example ref. 11).
+Two papers in this issue of Nature Structural Biology demonstrate how NMR studies complement structures determined by crystallography.
+Indeed the whole field of structural genomics is an integration of structural methods on a grand scale.
+It has never been true that the justification for solving a protein structure was, as for conquering Mt. Everest, because it was there.
+The form illuminates the function.
+Whatever the technical achievements or the complexities of the puzzles to be solved, we believe that the reason for being interested in the structure of a protein, or indeed any biological molecule, is to understand how it performs the tasks for which evolution has shaped it.
+The crystallographers' credo that you cannot understand a protein's function without knowing its structure now pervades all of molecular and cellular biology.
+Looking forward from what has certainly been an exceptionally exciting couple of years, it can be emphatically said that this is not the time for packing up and going home.
+There are huge goals for crystallographers to chase in all directions.
