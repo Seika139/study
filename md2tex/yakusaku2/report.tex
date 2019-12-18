@@ -7,8 +7,8 @@
 \usepackage{here}
 \usepackage{multirow} % 表でセルを結合しているときに必要
 \usepackage{booktabs} % 表の形式をbooktabにすると必要
-\usepackage{listings}
-\tcbuselibrary{raster,skins,breakable}
+\usepackage{listings} %日本語のコメントアウトをする場合jlistingが必要
+
 
 \newcommand{\pic}[1]{\begin{center} \includegraphics[width=1.0\linewidth,clip]{#1} \end{center}}   %写真用
 \newcommand{\pict}[2]{\begin{center} \includegraphics[width= {#2} cm]{#1} \end{center}}   %写真用
@@ -37,6 +37,8 @@
   numbersep=1zw,
   lineskip=-0.5ex
 }
+
+\tcbuselibrary{raster,skins,breakable}
 
 % ソースコードを入れる方法
 %\begin{lstlisting}[caption=hoge,label=fuga]
@@ -96,8 +98,8 @@
 
 \begin{document}
 
-\title{ここにタイトルを記入}
-\author{SUZUKEN}
+\title{薬学実習5 薬品作用学教室}
+\author{10191043 鈴木健一}
 %作成日を入れる場合は消す
 \date{}
 \maketitle
@@ -106,3 +108,60 @@
 %\footnotesize
 %\small
 %\normalsize
+
+
+\part*{実験3 摘出平滑筋を用いた実験}
+
+
+\subsection*{概要}
+モルモット回腸を用いてアセチルコリンの濃度を累積的に増加させたときの収縮を解析することで容量と反応の関係を理解する。
+競合的阻害と非競合的阻害を理解する。
+
+\subsection*{方法}
+実習書に則って行った。
+
+\subsection*{結果}
+アセチルコリンの濃度に応じて回腸は以下の表のように収縮した。
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lrrrrrrrrrrrr@{}}
+\toprule
+ACh濃度 ($\log_{10} {C_{ACh}}$)  & -9.0 & -8.5 & -8.0 & -7.5 & -7.0 & -6.5 & -6.0   & -5.5 & -5.0   & -4.5 & -4.0   & -3.5 \\ \midrule
+Control     & 0  & 0    & 0  & 0    & 20 & 27   & 29.5 & 31   & 31.7 & 32   & 0    & 0    \\
+Atropine $10^{-8}$M & 0  & 0    & 0  & 0    & 0  & 0    & 0    & 5.2  & 20   & 27.3 & 32   & 32   \\
+Atropine $10^{-7}$M & 0  & 0    & 0  & 0    & 0  & 0    & 0    & 0    & 0    & 8    & 27   & 32   \\
+Papaverine  & 0  & 0    & 0  & 0    & 0  & 2.4  & 19.3 & 24.6 & 26.2 & 24.6 & 24.2 & 23.8 \\ \bottomrule
+\end{tabular}
+\end{table}
+
+上記の表をもとにコントロールの最大収縮率を100\%としたときのそれぞれの収縮率は以下のようになる。
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lrrrrrrrrrrrr@{}}
+\toprule
+ACh濃度 ($\log_{10} {C_{ACh}}$) & -9.0 & -8.5 & -8.0 & -7.5 & -7.0   & -6.5   & -6.0  & -5.5   & -5.0  & -4.5 & -4.0 & -3.5 \\ \midrule
+Control     & 0  & 0    & 0  & 0    & 62.5 & 84.4 & 92.2 & 96.9 & 99.1 & 100     & 0      & 0      \\
+Atropine $10^{-8}$M & 0  & 0    & 0  & 0    & 0    & 0      & 0       & 16.3  & 62.5    & 85.3 & 100    & 100    \\
+Atropine $10^{-7}$M & 0  & 0    & 0  & 0    & 0    & 0      & 0       & 0      & 0       & 25      & 84.4 & 100    \\
+Papaverine  & 0  & 0    & 0  & 0    & 0    & 7.5    & 60.3 & 76.9 & 81.9  & 76.9  & 75.6 & 74.4 \\ \bottomrule
+\end{tabular}
+\end{table}
+
+
+用量作用曲線は以下のようになった。
+
+\pic{ys_curve.png}
+
+
+\subsection*{考察}
+アトロピンとアセチルコリンを与えた群はコントロール群に比べて用量作用曲線が右側にずれている。
+これはアトロピンがムスカリン性アセチルコリン受容体に結合することでアセチルコリンが受容体に結合できなくなるからである。
+したがってアセチルコリンの濃度が十分大きくなると収縮率は100\%に達する。これが競合的阻害である。
+
+一方パパベリンを投与した群はアセチルコリン濃度を大きくしても収縮率が100\%に至らない。
+これはパパベリンの作用点がアセチルコリン受容体ではなく、ホスホジエステラーゼを阻害してcAMPの濃度を増やすからである。
+結合する受容体が違うので、アセチルコリンの濃度を増やしても収縮率が100\%に達することはない。これが非競合的阻害である。
+
+\end{document}

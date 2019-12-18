@@ -7,8 +7,8 @@
 \usepackage{here}
 \usepackage{multirow} % 表でセルを結合しているときに必要
 \usepackage{booktabs} % 表の形式をbooktabにすると必要
-\usepackage{listings}
-\tcbuselibrary{raster,skins,breakable}
+\usepackage{listings} %日本語のコメントアウトをする場合jlistingが必要
+
 
 \newcommand{\pic}[1]{\begin{center} \includegraphics[width=1.0\linewidth,clip]{#1} \end{center}}   %写真用
 \newcommand{\pict}[2]{\begin{center} \includegraphics[width= {#2} cm]{#1} \end{center}}   %写真用
@@ -37,6 +37,8 @@
   numbersep=1zw,
   lineskip=-0.5ex
 }
+
+\tcbuselibrary{raster,skins,breakable}
 
 % ソースコードを入れる方法
 %\begin{lstlisting}[caption=hoge,label=fuga]
@@ -92,12 +94,12 @@
 %¥Alph	アルファベット（A、B、C、・・・）
 
 % ページ番号を消す場合は以下のコメントアウトを消す
-%\pagestyle{empty}
+\pagestyle{empty}
 
 \begin{document}
 
-\title{ここにタイトルを記入}
-\author{SUZUKEN}
+\title{薬学実習5 薬品作用学教室}
+\author{10191043 鈴木健一}
 %作成日を入れる場合は消す
 \date{}
 \maketitle
@@ -106,3 +108,23 @@
 %\footnotesize
 %\small
 %\normalsize
+
+
+\part*{実験4 循環器系に作用する薬物}
+
+
+\subsection*{概要}
+マウスを用いてアドレナリン受動態作動薬および遮断薬の心電図に対する効果を調べる。
+
+\subsection*{方法}
+実習書に則って行った。ただし、麻酔として用いたのはウレタンではなくペントバルビタールである。またジゴキシンの投与は行っていない。
+
+\subsection*{結果}
+イソプレテレノールを投与すると心拍数が290bpmから一気に440ほどに上昇したが、イソプレテレノールを投与する前にプロプラノロールを投与すると顕著な心拍数上昇は見られなかった。また、実習でもらったグラフでも同様の心拍数の変化が見られた。
+
+\subsection*{考察}
+イソプレテレノールは$\beta$受容体作動薬であり、心収縮力増大、心拍出量増大、心拍数増加といった作用を持つ。
+一方プロプラノロールは$\beta$受動態遮断薬であり、高血圧症のほか、狭心症や不整脈（頻脈）の治療に用いられる。
+したがって、プロプラノロールを投与するとイソプレテレノールによる心拍数増加の効果が抑えられたと考えられる。
+
+\end{document}
