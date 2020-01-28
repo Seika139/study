@@ -1,0 +1,259 @@
+\documentclass[a4paper,papersize,dvipdfmx]{jsarticle}
+\usepackage{ascmac}
+\usepackage{mathtools, amssymb,bm}
+\usepackage{comment}
+\usepackage[hiresbb]{graphicx}
+\usepackage{tcolorbox,color}
+\usepackage{here}
+\usepackage{multirow} % 表でセルを結合しているときに必要
+\usepackage{booktabs} % 表の形式をbooktabにすると必要
+\usepackage{listings}
+\tcbuselibrary{raster,skins,breakable}
+
+\newcommand{\pic}[1]{\begin{center} \includegraphics[width=1.0\linewidth,clip]{#1} \end{center}}   %写真用
+\newcommand{\pict}[2]{\begin{center} \includegraphics[width= {#2} cm]{#1} \end{center}}   %写真用
+\newcommand{\piccap}[3]{\begin{figure}[H] \centering \includegraphics[width= {#2} cm]{#1} \caption{#3} \label{fig {#1}} \end{figure}} %キャプションつき画像
+\newcommand{\redunderline}[1]{\textcolor{red}{\underline{¥textcolor{black}{#1}}}}   %赤いアンダーライン
+\newcommand{\mon}[1]{\item[({#1})] \ }
+\newcommand{\ctext}[1]{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}%文字を丸囲みする(2桁の数字までならいける)
+
+%ここからソースコードの表示に関する設定
+% 参考 https://qiita.com/ta_b0_/items/2619d5927492edbb5b03
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+
+% ソースコードを入れる方法
+%\begin{lstlisting}[caption=hoge,label=fuga]
+% #include<stdio.h>
+% int main(){
+%    printf("Hello world!");
+% }
+% \end{lstlisting}
+
+
+% 複数図を横に並べるときのヒント http://wright.mydns.jp/?p=704
+
+% \begin{figure}[H]
+% \begin{center}
+% \begin{tabular}{c}
+%
+% 一行目
+% \begin{minipage}{0.22\hsize}
+% \piccap{}{}{}
+% \end{minipage}
+%
+% 列の仕切り
+% \begin{minipage}{0.06\hsize}
+% \hspace{2mm}
+% \end{minipage}
+%
+% \begin{minipage}{0.22\hsize}
+% \piccap{}{}{}
+% \end{minipage}
+%
+% 行間スペース
+% \\
+% \begin{minipage}{0.06\hsize}
+% \vspace{10mm}
+% \end{minipage}
+% \\
+%
+% \end{tabular}
+% \end{center}
+% \end{figure}
+
+% 画像を貼る時はjpgかjpegで、pngはうまくいかない時もある
+
+%\itemを四角で囲った数字にする場合は以下のコメントアウトを消す
+%\renewcommand{\labelenumi}{\textbf{\framebox[1.5zw]{\theenumi}}}
+
+
+%enumerateの2階層めのカウンタを1,2,3, にする時は以下のコメントアウトを消す
+\renewcommand{\theenumii}{\arabic{enumii}}
+
+%enumerateのカウンタについては以下を参照
+% http://www3.otani.ac.jp/fkdsemi/pLaTeX_manual/kajyo.html
+
+
+%enumerateの番号の出力形式を変更するには、カウンタの値を出力する命令を定義し直す。
+%レベル	カウンタ	出力する命令	デフォルトの出力
+%１	enumi	¥theenumi	アラビア数字（１，２，３，・・・）
+%２	enumii	¥theenumii	小文字のアルファベット（a，b，c，・・・）
+%３	enumiii	¥theenumiii	小文字のローマ数字（小文字のローマ数字（ⅰ，ⅱ，ⅲ，・・・）
+%４	enumiv	¥theenumiv	大文字のアルファベット（A，B，C，・・・）
+%例：¥enumiカウンタを大文字のローマ数字で出力する設定
+% ¥renewcommand{¥theenumi}{¥Roman{enumi}}
+
+%　番号の出力形式
+%命令	出力形式
+%¥arabic	アラビア数字（１、２、３、・・・）
+%¥roman	ローマ数字（ⅰ、ⅱ、ⅲ、・・・）
+%¥Roman	ローマ数字（Ⅰ、Ⅱ、Ⅲ、・・・）
+%¥alph	アルファベット（a、b、c、・・・）
+%¥Alph	アルファベット（A、B、C、・・・）
+
+% ページ番号を消す場合は以下のコメントアウトを消す
+%\pagestyle{empty}
+
+\begin{document}
+
+\title{蛍光プローブ}
+\author{SUZUKEN}
+%作成日を入れる場合は消す
+\date{}
+\maketitle
+
+%以下の３つからフォントサイズを選択するとよい
+%\footnotesize
+%\small
+%\normalsize
+
+
+\part{蛍光とは}
+
+\section{そもそも発光とは}
+
+物質がエネルギーを吸収して光を出す現象を発光といい、そのエネルギー源として光、X線、熱、化学反応等があります。
+ここでは光をエネルギー源とする光発光を例にとり、その原理を説明します。
+
+芳香族化合物などが光を吸収すると、光のエネルギー分だけエネルギーの高い状態になります。
+これを励起状態といいます。
+光を吸収する前のエネルギーの低い安定な状態を基底状態といいます。
+したがって、励起状態は余分なエネルギーをもっているために不安定な状態です。
+物体を持ち上げると位置のエネルギー（ポテンシャルエネルギー）をもつために物体の支えをなくすと
+物体はポテンシャルエネルギーの低い状態に戻ろうとして下に落ちます。
+同じことは、光を吸収して励起状態になった化合物についてもいえます。
+エネルギーの高い励起状態から 余分のエネルギーを外部に放出して安定な基底状態になろうとします。
+このときのエネルギーの放出の仕方には3通りあります。
+\begin{itemize}
+\item 余分のエネルギーを光として放出する過程(発光)
+\item 2つ目は余分のエネルギーを熱として放出する過程
+\item 3つ目は余分のエネルギーを利用して化学反応を起こし別の化合物の基底状態になる過程
+\end{itemize}
+一つ目の過程によって放出される光を発光といいます。
+
+この発光には2つの種類、すなわち「蛍光」と「りん光」があります。
+「蛍光」は光っている時間が非常に短く（寿命が非常に短く）、
+「りん光」は光っている時間が長いため（寿命が長いため）発光体（光を出す物質）にあてている光を切っても、
+出てくる光をしばらくの時間見ることができる場合があります。
+このような光を残光といいます。
+
+\subsection{スピン多重度とは}
+
+電子が自転しているとすると右回りと左回りの回転があります。
+これに$+\frac{1}{2}$と$-\frac{1}{2}$のスピン量子数$(s)$を対応させます。
+分子にある電子は通常対で存在しますが、その場合スピン量子数は$0$になります。
+スピン多重度は
+\[2S+1\]
+で定義される。
+通常の芳香族化合物の基底状態では$S=0$ なので、スピン多重度は$1$となり、これを\textgt{1重項状態}といいます。
+対になっている電子が同じスピン量子数をもつと$(S=1)$スピン多重度は$3$となり、このような状態を\textgt{3重項状態}といいます。
+
+\section{蛍光と燐光}
+「蛍光」と「りん光」の違いとして光っている時間の長さで区別しましたが、もう少し厳密に定義してみましょう。
+「蛍光」は同じスピン多重度の状態間での発光、「りん光」は異なる多重度の状態間での発光ということができます。
+通常の芳香族化合物などでは、「蛍光」は励起一重項状態から基底状態（これも一重項状態）への電子遷移にともなう発光です。
+それに対して、りん光は三重項状態から基底状態（一重項状態）への電子遷移に伴う発光です。
+一重項状態から一重項状態への遷移は電子のスピンがそのままの状態で起こります（電子のスピンの変化がない）ので、非常に短い時間で変化が起こります。
+それに対して、異なる項の間の遷移は電子のスピンが変化しなければならないため、本来は禁制遷移(理論的に起こりえない遷移のこと)です。
+そのため、この遷移が起こるためには長い時間が必要となります（寿命が長くなります）。
+
+溶液中からの発光はほとんど「蛍光」です。
+三重項状態は寿命が長いため、溶液中に溶けている酸素などによって消光
+\footnote{他の分子（異なった種類あるいは同じ種類の物質でもかまいません）との衝突によって励起状態が基底状態へ変化させられることを消光といいます。}
+されるために、三重項状態は溶液中では非常に存在しにくいのです。
+
+\piccap{image2/jabr.png}{7}{ヤブロンスキー図}
+
+上図はヤブロンスキー図（Jablonski diagram）といわれているエネルギー状態の図です。
+S0、S1、S2はそれぞれ基底状態、第1励起一重項状態、第2励起一重項状態を表わしています。
+また、T1は三重項状態を示しています。S1からT1に遷移する過程を項間交差といいます。
+この図でもわかるように、一番低い一重項状態（第1励起一重項状態）からの発光が「蛍光」です。三重項状態からの発光が「りん光」となります。
+これらの光を出してエネルギーの低い状態へ移る過程を\textgt{輻射遷移}といいます。
+
+
+\subsection{熱を放出する過程}
+２つ目の「熱を放出する」過程は、光を出す過程と競争する過程です。
+上のヤブロンスキー図で点線で示した矢印の過程が熱を放出する過程を示しています。
+したがって、この過程が速く進むと蛍光などの発光効率が悪くなります。余分のエネルギーを熱エネルギーとして放出する過程を\textgt{無輻射遷移}といいます。
+
+\subsection{化学反応を起こす過程}
+３つ目の「余分のエネルギーを利用して化学反応を起こす」過程はいわゆる光化学反応です。
+通常の化学反応は熱エネルギーを駆動力として反応が起こります。
+そのため、温度を上げると反応の速さが増します。
+光化学反応は熱エネルギーよりはずっと大きい光のエネルギーを使うので、通常の熱反応では起こらないような反応が起こることがあります。
+
+\section{量子収率}
+光化学反応で反応分子が吸収した光子数に対して生成分子数の割合をいい0から1の間の値を取る。
+
+\[\mbox{量子収率}(\phi_f) = \frac{\mbox{生成した(発行した)分子数}}{\mbox{吸収した光子数}} = \frac{k_f}{k_f+k_{nr}}\]
+
+\part{光と物の色}
+「可視光を吸収することで見える色」と「可視光を放出することで見える色」の違いは蛍光ペンの色素を使って説明することができる。
+図 2 に市販の蛍光ペンのインクをアセトンに溶かしたときの写真を示す。
+太陽の光や蛍光灯の光には様々な波長の光が含まれている。
+私たちの目に見える色素の色は、色素がある波長領域の可視光を吸収して、吸収されない可視光を反射することに起因する。
+このときの吸収した光の色と見た目の色には補色の関係があり、
+ピンク色の蛍光ペンでは色素が緑色の光をよく吸収するために緑色の補色となるピンク色に見える。
+黄色の蛍光ペンの中には、黄色の補色の青色の光をよく吸収する色素が含まれている。その一方、暗い場所で可視光よりも短い
+波長の光（紫外線）を出す UV ランプを色素の溶液にあてると、ピンク色の蛍光ペンは黄緑色に見え、黄色の蛍光ペンは青緑色に見える。これは、色素が紫外線を吸収して、可視光線を放出することに由来し、このような光を蛍光と呼ぶ。
+
+\part{蛍光プローブ}
+蛍光プローブとは観測対象分子と「特異的に」反応・結合し、その前後で蛍光特性が大きく変化する機能性分子のことである。
+イメージングに用いる蛍光分子を総称して「蛍光プローブ」と呼ぶ場合もあるが、蛍光分子を化学的に修飾または遺伝的に改変することで、標的となる分子(もしくは細胞や組織)を認識してはじめて蛍光強度や波長などのパラメータが変化するような有用な性質が付与されたものに限って「蛍光プローブ」と定義する。
+
+\section{光誘起電子移動(PeT)}
+励起された蛍光分子Fと近傍の分子D(電子供与体)との間で電子が移動する現象のことである。
+電子移動の結果として、2つのラジカルが生じるが、この状態(電荷分離状態 CS)は非常に不安定であるため、
+すぐに失活して基底状態へと戻る。PeTが効率よく起こる場合、
+本来は蛍光に使われるはずのエネルギーの大半が無輻射的に失われるため、
+分子Fは無蛍光となる。
+PeTは光合成にも関与する一般的な光化学反応であり、物理化学的にはRehn-Weller式および、Macrus式によって記述される。
+Rehn-Weller式から分子Dの酸化電位が低い場合にPeTが起こりやすくなり、蛍光が生じなくなる。また、共役的に独立していればFとDは同一分子内の2つの部分でも構わない。
+
+\begin{equation}
+\Delta G_{PeT} = E_{ax} ( \frac{D}{D^+} )-E_{red}( \frac{F}{F^-} )-E_{00}-C \tag{Rehn-Weller式}
+\end{equation}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+$\Delta G_{PeT}$ & 電子移動に伴う自由エネルギー変化 \\ \hline
+$E_{ax}$         & 酸化電位             \\ \hline
+$E_{red}$        & 還元電位             \\ \hline
+$D$              & 電子供与体            \\ \hline
+$F$              & 蛍光団              \\ \hline
+$E_{00}$         & 励起エネルギー          \\ \hline
+$C$              & 溶媒項              \\ \hline
+\end{tabular}
+\end{table}
+
+したがって、ある化学反応により電子供与体Dの酸化電位が変化する場合、PeTを利用して蛍光強度が上昇するプローブを設計できる。
+
+\section{スピロ環化}
+基底状態の分子構造を変化させることによっても蛍光の制御が可能である。
+スピロ環化はその代表例であり、キサンテン系蛍光団において古くから知られている。
+
+\subsection{参考サイト}
+\begin{itemize}
+\item http://ene.ed.akita-u.ac.jp/~ueda/education/sentan/chemilumi/principle.html
+\end{itemize}
+
+\end{document}
